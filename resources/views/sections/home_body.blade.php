@@ -64,6 +64,7 @@
     </div>
     
 </body>
+
 <script>
     $(document).ready(function(){
         // -- card hover effect -------

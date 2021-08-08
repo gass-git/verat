@@ -3,7 +3,7 @@
     
     @include('sections/head')
     @include('sections/nav')
-    @include('sections/body')
+    @include('sections/post_body')
     @include('sections/footer')
     
 </html>
