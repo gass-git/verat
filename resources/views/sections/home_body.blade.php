@@ -1,8 +1,8 @@
-<body style="background-color:rgb(255, 255, 255)">
+<body>
     
-    <div class="mx-auto" style="width:70%;margin-top:70px">
+    <div class="mx-auto" style="width:90%;max-width:970px;margin-top:70px">
    
-        <div class="d-flex flex-wrap">
+        <div class="d-flex flex-wrap justify-content-center">
         
             <a href="#" class="card m-3" style="width: 18rem;">
                 <img class="card-img-top" src="images/cover-sample.png" alt="Card image cap">
