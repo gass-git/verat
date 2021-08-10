@@ -13,9 +13,9 @@
 
     <!-- Bootstrap CDN -->
     <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css?v=1">
 
     <!-- App main style -->
-    <link rel="stylesheet" href="css/app.css?v=3">
+    <link rel="stylesheet" href="css/app.css?v=4">
 
 </head>

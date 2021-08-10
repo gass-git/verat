@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use App\Models\UniqueVisit;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,19 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $IP = request()->ip();
 
-        // New ip?
-        if( UniqueVisit::where('ip', $IP)->first() == null ){
+        $posts = Post::whereNotNull('body')->orderBy('id','DESC')->paginate(6);
 
-            UniqueVisit::insert([
-                'ip' => $IP, 
-                'created_at' => Carbon::now()
-            ]);
-        }
-
-        $visits = UniqueVisit::count();
-
-        return view('layouts/home', compact('visits'));
+        return view('layouts/home', compact('posts'));
     }
 }

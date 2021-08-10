@@ -11,6 +11,25 @@
   }
 </style>
 
+@php
+
+  use Carbon\Carbon;
+  use App\Models\UniqueVisit;
+
+  $IP = request()->ip();
+
+  // New ip?
+  if( UniqueVisit::where('ip', $IP)->first() == null ){
+
+      UniqueVisit::insert([
+          'ip' => $IP, 
+          'created_at' => Carbon::now()
+      ]);
+  }
+
+  $visits = UniqueVisit::count();
+
+@endphp
 
 <div class="bar h-100 d-flex p-3 text-white">
   
