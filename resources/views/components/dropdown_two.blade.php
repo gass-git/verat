@@ -1,6 +1,6 @@
 <div class="dropdown">
   
-  <a class="nav-item" id="dropdown-two" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <a class="nav-item" id="dropdown-two" style="color:#fff" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Topics
   </a>
 

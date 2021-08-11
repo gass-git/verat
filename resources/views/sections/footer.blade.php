@@ -1,6 +1,7 @@
 <style>
     footer{
         height:150px;
+        background:#f6f8fa;
     }
     .dash-circuit{
         height:90px; 
@@ -27,10 +28,5 @@
 
 <footer>
 
-    <a class="dash-circuit mr-5 mt-2" href="https://tipmedash.com/gass" target="_blank">
-        <div class="layer">
-            <img src="svgs/blue-dash.svg" height="50px" />
-        </div> 
-    </a>
-
+    
 </footer>

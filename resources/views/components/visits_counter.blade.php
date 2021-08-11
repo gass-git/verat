@@ -1,11 +1,15 @@
 <style>
 .number-container {
   display: inline-block;
-  padding: 6px 6px 4px;
+  width:25px!important;
+  height:35px!important;
   border-radius: 3px;
-  background: #787A91;
-  margin-right: 2px;
-  color:rgb(255, 255, 255);
+  margin-right: 3px;
+  border:1px solid #686868;
+  font-weight: 500;
+  color:#ffffff;
+  text-align:center;
+  opacity:1;
 }
 </style>
 
@@ -16,9 +20,9 @@
 
   for($pos = 6; $pos >= 0; $pos--){
     if($num_lenght-1 < $pos){
-      echo '<span class="number-container">'.'0'.'</span>';
+      echo '<span class="number-container p-1">'.'0'.'</span>';
     }else{
-      echo '<span class="number-container">'.substr($visits, $pos, $pos+1).'</span>';
+      echo '<span class="number-container p-1">'.substr($visits, $pos, $pos+1).'</span>';
     }
   }
   

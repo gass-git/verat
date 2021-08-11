@@ -1,16 +1,17 @@
 <style>
   .bar{
-    min-height:70px;
+    min-height:75px;
   }
   .web-title{
     font-size:25px;
   }
   .nav-item{
-    font-size:20px;
+    font-size:16px;
+    font-weight: 600;
     cursor:pointer;
   }
   .nav-item:hover{
-    color:#96BAFF!important;
+    color:#cccccc!important;
   }
 </style>
 
@@ -26,26 +27,30 @@
   
 
   <!-- Blog title -->
-  <a class="web-title mt-3 ml-2 mr-auto" href="/">Gass.codes</a>
+  <a class="web-title mt-3 ml-5 mr-auto" href="/">
+  
+    @include('components/logo')
+
+  </a>
 
   
   <!-- Nav items -->
-  <div class="mt-3 mr-5">
+  <div class="mt-4 mr-5">
     @include('components/dropdown_one')
   </div>  
 
-  <div class="mt-3 mr-5">
+  <div class="mt-4 mr-5">
     @include('components/dropdown_two')
   </div>
 
   @auth 
-    <div class="mt-3 mr-5">
+    <div class="mt-4 mr-5">
       @include('components/admin_dropdown')
     </div>
   @endauth
 
   <!-- Unique visitors -->
-  <div class="mt-3 mr-3">
+  <div class="mr-3" style="margin-top:20px;">
     @include('components/visits_counter')
   </div>
 

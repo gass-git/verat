@@ -19,6 +19,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css?v=2">
 
     <!-- App main style -->
-    <link rel="stylesheet" href="css/custom_style.css?v=3">
+    <link rel="stylesheet" href="css/custom_style.css?v=5">
 
 </head>

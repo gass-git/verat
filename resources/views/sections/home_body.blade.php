@@ -1,8 +1,8 @@
-<body style="background-color: #464660;">
-    <div style="background-color:white;padding:50px 0 50px 0;min-height:calc(100vh - 70px - 150px);">
+<body style="background-color: #2e2e2e;">
+    <div style="background-color:#f6f8fa;padding:50px 0 50px 0;min-height:calc(100vh - 70px - 150px);">
         <div class="mx-auto" style="width:90%;max-width:970px;">
 
-            <div class="d-flex flex-wrap justify-content-center">
+            <div class="d-flex flex-wrap">
         
                 @foreach($posts as $post)
 
@@ -12,7 +12,7 @@
 
             </div>
 
-            <div class="mt-4">{{ $posts->links() }}</div>
+            <div class="mt-4" style="margin-left:14px;">{{ $posts->links() }}</div>
 
         </div>
     </div>    

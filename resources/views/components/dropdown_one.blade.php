@@ -1,6 +1,6 @@
 <div class="dropdown">
   
-  <a class="nav-item" id="dropdown-one" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <a class="nav-item" id="dropdown-one" style="color:#ffffff" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Sort By
   </a>
 
