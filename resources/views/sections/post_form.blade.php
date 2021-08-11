@@ -7,7 +7,7 @@
 </style>
 
 <div class="form-wrapper mx-auto">
-    <form action="{{ url('/create_post') }}" method="post">
+    <form action="{{ url('/create_post') }}" method="post" enctype="multipart/form-data">
     @csrf    
         <div class="form-group">
             <label>Cover image</label>

@@ -1,5 +1,5 @@
 <a href="post={{ $post->id }}" class="card m-3" style="width: 18rem;">
-    <img class="card-img-top" src="{{ $post->image }}">
+    <img class="card-img-top" src="{{ $post->cover_url }}" height="150px" width="100px">
     <div class="card-body">
         
         <h5 class="card-title" style="color:black">{{ $post->title }}</h5>

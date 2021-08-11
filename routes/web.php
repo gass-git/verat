@@ -16,7 +16,7 @@ use App\http\Controllers\PostController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::post('/create_post', [PostController::class, 'insert']);
 
