@@ -1,5 +1,5 @@
 <style>
-span {
+.number-container {
   display: inline-block;
   padding: 6px 6px 4px;
   border-radius: 3px;
@@ -16,9 +16,9 @@ span {
 
   for($pos = 6; $pos >= 0; $pos--){
     if($num_lenght-1 < $pos){
-      echo '<span>'.'0'.'</span>';
+      echo '<span class="number-container">'.'0'.'</span>';
     }else{
-      echo '<span>'.substr($visits, $pos, $pos+1).'</span>';
+      echo '<span class="number-container">'.substr($visits, $pos, $pos+1).'</span>';
     }
   }
   

@@ -1,6 +1,6 @@
 <style>
   .bar{
-    background-color:#0a2a42;
+    min-height:70px;
   }
   .web-title{
     font-size:25px;
@@ -9,52 +9,43 @@
     font-size:20px;
     cursor:pointer;
   }
+  .nav-item:hover{
+    color:#96BAFF!important;
+  }
 </style>
 
 @php
 
-  use Carbon\Carbon;
   use App\Models\UniqueVisit;
-
-  $IP = request()->ip();
-
-  // New ip?
-  if( UniqueVisit::where('ip', $IP)->first() == null ){
-
-      UniqueVisit::insert([
-          'ip' => $IP, 
-          'created_at' => Carbon::now()
-      ]);
-  }
 
   $visits = UniqueVisit::count();
 
 @endphp
 
-<div class="bar h-100 d-flex p-3 text-white">
+<div class="bar h-100 d-flex text-white">
   
 
   <!-- Blog title -->
-  <a class="web-title ml-2 mr-auto" href="/">Gass.codes</a>
+  <a class="web-title mt-3 ml-2 mr-auto" href="/">Gass.codes</a>
 
   
   <!-- Nav items -->
-  <div class="mr-5">
+  <div class="mt-3 mr-5">
     @include('components/dropdown_one')
   </div>  
 
-  <div class="mr-5">
+  <div class="mt-3 mr-5">
     @include('components/dropdown_two')
   </div>
 
   @auth 
-    <div class="mr-5">
+    <div class="mt-3 mr-5">
       @include('components/admin_dropdown')
     </div>
   @endauth
 
   <!-- Unique visitors -->
-  <div class="mr-3">
+  <div class="mt-3 mr-3">
     @include('components/visits_counter')
   </div>
 

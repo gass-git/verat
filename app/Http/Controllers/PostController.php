@@ -29,6 +29,7 @@ class PostController extends Controller
             'title' => $req->title,
             'body' => $req->post,
             'cover_url' => 'http://verat.test/storage/post-covers/'.$img_new_name,
+            'claps' => 0,
             'views' => 0,
             'created_at' => Carbon::now()
         ]);

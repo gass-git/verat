@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('body');
+            $table->integer('claps')->nullable();
             $table->string('cover_url')->nullable();
             $table->integer('views')->nullable();
             $table->string('category')->nullable();

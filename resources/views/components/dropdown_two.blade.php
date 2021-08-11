@@ -5,9 +5,9 @@
   </a>
 
   <div class="dropdown-menu mt-1" aria-labelledby="dropdown-two">
-    <a class="dropdown-item" href="#">jQuery</a>
-    <a class="dropdown-item" href="#">CSS</a>
-    <a class="dropdown-item" href="#">Laravel</a>
+    <a class="dropdown-item" href="{{ url('/home_topic=jquery') }}">jQuery</a>
+    <a class="dropdown-item" href="{{ url('/home_topic=css') }}">CSS</a>
+    <a class="dropdown-item" href="{{ url('/home_topic=laravel') }}">Laravel</a>
   </div>
 
 </div>

@@ -18,6 +18,10 @@ use App\http\Controllers\PostController;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+Route::get('/home_sortby={field}', [HomeController::class, 'sortby']);
+
+Route::get('/home_topic={field}',[HomeController::class, 'show_topic']);
+
 Route::post('/create_post', [PostController::class, 'insert']);
 
 Route::get('/post', function () {
