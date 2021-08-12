@@ -15,6 +15,6 @@
     <div class="pill border mr-2 p-2" style="background-color: #B980F0;color:white"><i class="fas fa-comment mr-2"></i>123</div>
     
     <!-- Popularity -->
-    <div class="pill border mr-2 p-2" style="background-color: #E5FBB8"><i class="far fa-thumbs-up mr-2"></i>{{ $post->claps }}</div>
+    <div class="pill border mr-2 p-2" style="background-color: #E5FBB8"><i class="far fa-thumbs-up mr-2"></i>{{ $post->likes }}</div>
 
 </div>

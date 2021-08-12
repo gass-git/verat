@@ -24,6 +24,8 @@ Route::get('/home_topic={field}',[HomeController::class, 'show_topic']);
 
 Route::post('/create_post', [PostController::class, 'insert']);
 
+Route::post('/like_post',[PostController::class, 'like']);
+
 Route::get('/post', function () {
     return view('layouts/create_post');
 });

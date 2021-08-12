@@ -1,5 +1,5 @@
-<body style="background-color: #2e2e2e;">
-    <div style="background-color:#f6f8fa;padding:50px 0 50px 0;min-height:calc(100vh - 70px - 150px);">
+<body style="background-color: #f6f8fa;">
+    <div style="padding:50px 0 50px 0;min-height:calc(100vh - 70px - 150px);">
         <div class="mx-auto" style="width:90%;max-width:970px;">
 
             <div class="d-flex flex-wrap">

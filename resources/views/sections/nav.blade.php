@@ -1,6 +1,7 @@
 <style>
   .bar{
     min-height:75px;
+    background-color: #2e2e2e;
   }
   .web-title{
     font-size:25px;

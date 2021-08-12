@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\PraiseRecord;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -12,9 +13,14 @@ class PostController extends Controller
     
     public function show($post_id){
 
-        $post = Post::where('id', $post_id)->first();
+        $user_ip = request()->ip();
 
-        return view('layouts/post',compact('post'));
+        $post = Post::where('id', $post_id)->first();
+        $post_id = $post->id;
+
+        $like = PraiseRecord::where('ip', $user_ip)->first();
+
+        return view('layouts/post',compact('post','post_id','like'));
 
     }
 
@@ -29,12 +35,29 @@ class PostController extends Controller
             'title' => $req->title,
             'body' => $req->post,
             'cover_url' => 'http://verat.test/storage/post-covers/'.$img_new_name,
-            'claps' => 0,
+            'likes' => 0,
             'views' => 0,
             'created_at' => Carbon::now()
         ]);
 
         return redirect()->route('home');
+
+    }
+
+    public function like(Request $req){
+
+        $user_ip = Request()->ip();
+
+        $like_exists = PraiseRecord::where('ip', $user_ip)->first();
+
+        if($like_exists){
+            PraiseRecord::where('ip', $user_ip)->first()->delete();
+        }else{
+            PraiseRecord::insert([
+                'ip' => $user_ip,
+                'post_id' => $req->post_id
+            ]);
+        }
 
     }
 
