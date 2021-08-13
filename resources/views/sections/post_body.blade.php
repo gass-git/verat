@@ -44,9 +44,9 @@
                     @auth
                     
                         @if($data->admin_praise === 'like')
-                            <p><i id="{{ $data->id }}" class="fas fa-thumbs-up" style="color:blue;cursor:pointer;"></i></p>
+                            <p><i id="{{ $data->id }}" class="fas fa-heart" style="color:rgb(253, 53, 53);cursor:pointer;"></i></p>
                         @else
-                            <p><i id="{{ $data->id }}" class="fas fa-thumbs-up" style="color:rgb(196,196,196);cursor:pointer;"></i></p>
+                            <p><i id="{{ $data->id }}" class="fas fa-heart" style="color:rgb(196,196,196);cursor:pointer;"></i></p>
                         @endif
 
                     
@@ -99,7 +99,7 @@
 <script>
     $('#post-like').on('click',function(){
 
-        let icon = $('#post-like-icon')
+        let icon = $('#post-like-icon');
 
         if(icon.css('color') == 'rgb(196, 196, 196)'){
             icon.css('color','blue')
@@ -123,7 +123,7 @@
 
     });
 
-    $('.fa-thumbs-up').click(function(){
+    $('.fa-heart').click(function(){
 
         var id = $(this).attr('id');       
         var icon = $('#' + id);              
@@ -131,7 +131,7 @@
         console.log('works')
 
         if(icon.css('color') == 'rgb(196, 196, 196)'){
-            icon.css('color','blue')
+            icon.css('color','rgb(253, 53, 53)')
         }else{
             icon.css('color','rgb(196, 196, 196)')
         }
