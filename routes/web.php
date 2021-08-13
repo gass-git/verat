@@ -22,11 +22,14 @@ Route::get('/home_sortby={field}', [HomeController::class, 'sortby']);
 
 Route::get('/home_topic={field}',[HomeController::class, 'show_topic']);
 
+
 Route::post('/post_comment={post_id}', [PostController::class, 'post_comment']);
 
 Route::post('/create_post', [PostController::class, 'insert']);
 
-Route::post('/like_post',[PostController::class, 'like']);
+Route::post('/like_post',[PostController::class, 'like_post']);
+
+Route::post('/like_comment',[PostController::class, 'like_comment']);
 
 Route::get('/post', function () {
     return view('layouts/create_post');

@@ -64,7 +64,7 @@ class PostController extends Controller
 
     }
 
-    public function like(Request $req){
+    public function like_post(Request $req){
 
         $user_ip = Request()->ip();
 
@@ -96,6 +96,8 @@ class PostController extends Controller
 
         $user_ip = request()->ip();
 
+
+
         Comment::insert([
             'author_ip' => $user_ip,
             'author_name' => $req->name,
@@ -107,6 +109,24 @@ class PostController extends Controller
 
         return back();
 
+    }
+
+    public function like_comment(Request $req){
+        
+        $comment_liked = Comment::where('id', $req->comment_id)->where('admin_praise', 'like')->first();
+        $comment = Comment::where('id', $req->comment_id)->first();
+        
+        if($comment_liked){
+            
+            $comment->admin_praise = NULL;
+            $comment->save();
+
+        }else{
+
+            $comment->admin_praise = 'like';
+            $comment->save();
+            
+        }
     }
 
 }

@@ -41,6 +41,17 @@
                     
                     <p>{{ $data->comment }}</p>
 
+                    @auth
+                    
+                        @if($data->admin_praise === 'like')
+                            <p><i id="{{ $data->id }}" class="fas fa-thumbs-up" style="color:blue;cursor:pointer;"></i></p>
+                        @else
+                            <p><i id="{{ $data->id }}" class="fas fa-thumbs-up" style="color:rgb(196,196,196);cursor:pointer;"></i></p>
+                        @endif
+
+                    
+                    @endauth
+
                 @if($data->admin_reply)
                     <div class="ml-5">
                         <b>Admin</b>
@@ -73,26 +84,27 @@
 
     </div>
 
-      
 
-    <div id="like" class="p-2" style="font-size:30px;display: inline-block; border-radius:50%;position:fixed; bottom:50px; right:50px;cursor:pointer;">
+    <div id="post-like" class="p-2" style="font-size:30px;display: inline-block; border-radius:50%;position:fixed; bottom:50px; right:50px;cursor:pointer;">
         
         @if($like)
-        <i id="like-icon" class="fas fa-thumbs-up" style="color:blue;"></i>
+        <i id="post-like-icon" class="fas fa-thumbs-up" style="color:blue;"></i>
         @else
-        <i id="like-icon" class="fas fa-thumbs-up" style="color:rgb(196,196,196);"></i>
+        <i id="post-like-icon" class="fas fa-thumbs-up" style="color:rgb(196,196,196);"></i>
         @endif
 
     </div>
 </body>    
 
 <script>
-    $('#like').on('click',function(){
+    $('#post-like').on('click',function(){
 
-        if($('#like-icon').css('color') == 'rgb(196, 196, 196)'){
-            $('#like-icon').css('color','blue')
+        let icon = $('#post-like-icon')
+
+        if(icon.css('color') == 'rgb(196, 196, 196)'){
+            icon.css('color','blue')
         }else{
-            $('#like-icon').css('color','rgb(196, 196, 196)')
+            icon.css('color','rgb(196, 196, 196)')
         }
       
         $.ajax({
@@ -110,4 +122,35 @@
         })
 
     });
+
+    $('.fa-thumbs-up').click(function(){
+
+        var id = $(this).attr('id');       
+        var icon = $('#' + id);              
+
+        console.log('works')
+
+        if(icon.css('color') == 'rgb(196, 196, 196)'){
+            icon.css('color','blue')
+        }else{
+            icon.css('color','rgb(196, 196, 196)')
+        }
+
+    
+        $.ajax({
+            type:'post',
+            url:"{{ url('/like_comment') }}",
+            data:{
+                _token: "{{ csrf_token() }}", comment_id: id
+            },
+            success:function(){
+                // Do nothing
+            },
+            error:function(){  
+                console.log('AJAX error')   
+            }
+        })
+        
+    });
+
 </script>
