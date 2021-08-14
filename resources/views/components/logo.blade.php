@@ -43,9 +43,18 @@
     }
 }
 </style>
-<div id="logo" class="logo">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+
+<div class="d-flex flex-row">
+
+    <div id="logo" class="logo">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <div class="ml-4">
+        <!-- Web title -->
+    </div>    
+
 </div>

@@ -14,11 +14,9 @@
 <div class="mx-auto" style="width:70%;max-width:800px;margin-top:70px">
    
     <div class="d-flex flex-wrap">
-    
         <div class="topic border">Laravel</div>
         <div class="topic border">jQuery</div>
-        <div class="topic border">css</div>
-        
+        <div class="topic border">css</div>    
     </div>    
 
 </div>
