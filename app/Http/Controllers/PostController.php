@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Images;
 use App\Models\PostVisit;
 use App\Models\Post;
 use App\Models\PraiseRecord;
@@ -61,6 +62,27 @@ class PostController extends Controller
         ]);
 
         return redirect()->route('home');
+
+    }
+
+    public function upload_image(Request $req){
+
+        $img_name = date('H_s_i');
+        $folder = date('m_y');
+
+        $req->file('post_img')->storeAs('post-images/'.$folder , $img_name, 'public');
+        
+        Images::insert([
+            'url' => 'http://verat.test/storage/post-images/'.$folder.'/'.$img_name
+        ]);
+
+        return back();
+
+    }
+
+    public function delete_image(Request $req){
+
+        Images::where('id', $req->img_id)->delete();
 
     }
 

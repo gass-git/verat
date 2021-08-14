@@ -27,13 +27,17 @@ Route::post('/post_comment={post_id}', [PostController::class, 'post_comment']);
 
 Route::post('/create_post', [PostController::class, 'insert']);
 
+Route::post('/upload_image', [PostController::class, 'upload_image']);
+
+Route::post('/delete_image', [PostController::class, 'delete_image']);
+
 Route::post('/like_post',[PostController::class, 'like_post']);
 
 Route::post('/like_comment',[PostController::class, 'like_comment']);
 
 Route::get('/post', function () {
     return view('layouts/create_post');
-});
+})->middleware('auth');
 
 Route::get('/post={post_id}',[PostController::class, 'show']);
 

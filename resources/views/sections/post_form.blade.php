@@ -2,34 +2,54 @@
     .form-wrapper{
         width:90%;
         max-width:970px;
-        margin:70px 0 50px 0;
     }
 </style>
 
-<div class="form-wrapper mx-auto">
-    <form action="{{ url('/create_post') }}" method="post" enctype="multipart/form-data">
-    @csrf    
-        <div class="form-group">
-            <label>Cover image</label>
-            <input name="img" type="file" class="form-control-file" >
-        </div>
+<body style="background-color: #f6f8fa;">
+    <div style="min-height:calc(99vh - 70px - 50px);">
+        <div class="form-wrapper mx-auto pt-5">
 
-        <div class="form-group">
-            <label>Category</label>
-            <input name="category" class="form-control">
-        </div>
+            <form action="{{ url('/create_post') }}" method="post" enctype="multipart/form-data">
+            @csrf    
+                <div class="form-group">
+                    <label>Cover image</label>
+                    <input name="img" type="file" class="form-control-file" >
+                </div>
 
-        <div class="form-group">
-            <label>Title</label>
-            <input name="title" class="form-control">
-        </div>
-        
-        <div class="form-group">
-            <label>Post body</label>
-            <textarea name="post" class="form-control" rows="15"></textarea>
-        </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <input name="category" class="form-control">
+                </div>
 
-        <button type="submit">Save</button>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input name="title" class="form-control">
+                </div>
 
-    </form>
-</div>    
+                <div class="form-group">
+                    <label>Post body</label>
+                    <textarea id="textarea" name="post" class="form-control" rows="10"></textarea>
+                </div>
+
+                <button type="submit">Save</button>
+
+            </form>
+
+            <div class="mt-4 mb-4">
+                <form action="{{ url('/upload_image') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                        <div class="form-group">
+                            <label>Upload post image</label>
+                            <input name="post_img" type="file" class="form-control-file" >
+                        </div>
+
+                        <button type="submit">upload</button>
+
+                </form>
+            </div>
+
+            @include('components/latest_img_uploads')
+
+        </div> 
+    </div>       
+</body>    
