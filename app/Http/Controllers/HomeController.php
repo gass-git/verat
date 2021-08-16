@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Interaction;
 use App\Models\Post;
 use Carbon\Carbon;
 use App\Models\UniqueVisit;
@@ -39,7 +40,7 @@ class HomeController extends Controller
         $posts = Post::whereNotNull('body')->orderBy('id','DESC')->paginate(6);
         $field = 'Latest';
 
-        return view('layouts/home', compact('posts','field'));
+        return view('layouts/home', compact('posts','field','IP'));
     }
 
     public function sortby($field){
@@ -65,6 +66,70 @@ class HomeController extends Controller
         $posts = Post::where('category', $field)->paginate(6);
 
         return view('layouts/home', compact('posts','field'));
+
+    }
+
+    public function bookmark(Request $req){
+
+        $user_ip = Request()->ip();
+
+        $interaction = Interaction::where('ip', $user_ip)->where('post_id', $req->post_id)->first();
+
+        if($interaction){
+
+            if($interaction->bookmark == 'yes'){
+
+                $interaction->bookmark = 'no';
+                $interaction->save();
+
+            }else{
+
+                $interaction->bookmark = 'yes';
+                $interaction->save();
+
+            }
+
+        }else{
+
+            Interaction::insert([
+                'ip' => $user_ip,
+                'post_id' => $req->post_id,
+                'bookmark' => 'yes'
+            ]);
+
+        }
+    }
+
+    public function check_card(Request $req){
+
+        $user_ip = Request()->ip();
+
+        $interaction = Interaction::where('ip', $user_ip)->where('post_id', $req->post_id)->first();
+
+        if($interaction){
+
+            if($interaction->check == 'yes'){
+
+                $interaction->check = 'no';
+                $interaction->save();
+
+            }else{
+
+                $interaction->check = 'yes';
+                $interaction->save();
+
+            }
+        
+        }else{
+
+            Interaction::insert([
+                'ip' => $user_ip,
+                'post_id' => $req->post_id,
+                'check' => 'yes'
+            ]);
+
+
+        }
 
     }
 

@@ -35,12 +35,18 @@
   </a>
 
   <!-- Nav items -->
-  <div class="mt-4 mr-5">
+   <div class="mt-4 mr-5">
     @include('components/dropdown_one')
   </div>  
 
   <div class="mt-4 mr-5">
     @include('components/dropdown_two')
+  </div>
+
+  <div class="mt-4 mr-5">
+    <a href="#" class="nav-item" id="dropdown-two" style="color:white;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Show Bookmarked
+    </a>
   </div>
 
   @auth 

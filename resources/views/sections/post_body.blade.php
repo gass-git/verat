@@ -34,6 +34,7 @@
 
     </div>
 
+    @include('components/check_btn')
     @include('components/like_post_btn')
 
 </body>    

@@ -1,3 +1,40 @@
+<style>
+     .card{
+        border-radius: 0;
+    }
+    .card-img-top{
+        border-radius: 0;
+    }
+    .bookmark-btn{
+        position:absolute;
+        right:10px;
+        top:10px;
+        border-radius:4px; 
+        background-color:rgba(255, 255, 255, 0.8);
+        width:30px;
+        font-size:20px;
+        text-align:center;
+        z-index:99;
+    }
+    .bookmark-btn:hover{
+        background-color:rgba(255, 255, 255, 0.9);
+    }
+    .check-btn{
+        position:absolute;
+        right:50px;
+        top:10px;
+        border-radius:4px; 
+        background-color:rgba(255, 255, 255, 0.8);
+        width:30px;
+        font-size:20px;
+        text-align:center;
+        z-index:99;
+    }
+    .check-btn:hover{
+        background-color:rgba(255, 255, 255, 0.9);
+    }
+</style>
+
 <body style="background-color: #f6f8fa;">
     <div style="padding:50px 0 50px 0;min-height:calc(99vh - 70px - 50px);">
         <div class="mx-auto" style="width:90%;max-width:970px;">
@@ -27,4 +64,70 @@
             function() { $(this).removeClass('shadow') }
         );
     });
+
+    $('.check-btn').on('click',function(){
+
+        let post_id = $(this).attr('id');
+        let btn = $('#' + post_id + '.check-btn');
+
+        if(btn.css('color') === 'rgb(196, 196, 196)'){
+
+            btn.css('color', 'rgb(20, 128, 56)');
+
+        }else{
+
+            btn.css('color', 'rgb(196, 196, 196)');
+
+        }
+
+        $.ajax({
+
+            type: 'post',
+            url: "{{ url('/check_card') }}",
+            data: {
+                _token: "{{ csrf_token() }}", post_id: post_id
+            },
+            success:function(){
+                // Do nothing
+            },
+            error:function(){
+                console.log('AJAX error')
+            }
+        });
+
+    });
+
+
+    $('.bookmark-btn').on('click',function(){
+
+        let post_id = $(this).attr('id');
+        let btn = $('#' + post_id + '.bookmark-btn');
+
+        if(btn.css('color') === 'rgb(196, 196, 196)'){
+
+            btn.css('color', 'rgb(201, 82, 35)');
+
+        }else{
+
+            btn.css('color', 'rgb(196, 196, 196)');
+
+        }
+
+        $.ajax({
+
+            type: 'post',
+            url: "{{ url('/bookmark') }}",
+            data: {
+                _token: "{{ csrf_token() }}", post_id: post_id
+            },
+            success:function(){
+                // Do nothing
+            },
+            error:function(){
+                console.log('AJAX error')
+            }
+        });
+
+    });
+
 </script>

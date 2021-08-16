@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Interaction;
 use App\Models\Images;
 use App\Models\PostVisit;
 use App\Models\Post;
@@ -39,9 +40,10 @@ class PostController extends Controller
 
         
             
-        $like = PraiseRecord::where('ip', $user_ip)->first();
+        $like = PraiseRecord::where('ip', $user_ip)->where('post_id', $post_id)->first();
+        $checked = Interaction::where('ip', $user_ip)->where('post_id', $post_id)->where('check', 'yes')->first();
 
-        return view('layouts/post',compact('post','post_id','like','comments'));
+        return view('layouts/post',compact('post','post_id','like','comments','checked'));
 
     }
 
@@ -90,12 +92,13 @@ class PostController extends Controller
 
         $user_ip = Request()->ip();
 
-        $like_exists = PraiseRecord::where('ip', $user_ip)->first();
         $post = Post::where('id',$req->post_id)->first();
+        $like_exists = PraiseRecord::where('ip', $user_ip)->where('post_id', $post->id)->first();
+        
 
         if($like_exists){
            
-            PraiseRecord::where('ip', $user_ip)->first()->delete();
+            PraiseRecord::where('ip', $user_ip)->where('post_id', $post->id)->first()->delete();
             
             $post->likes -= 1;
             $post->save();
@@ -111,6 +114,39 @@ class PostController extends Controller
             $post->save();
 
         }
+
+    }
+
+    public function check_post(Request $req){
+
+        $user_ip = Request()->ip();
+
+        $interaction = Interaction::where('ip', $user_ip)->where('post_id', $req->post_id)->first();
+
+        if($interaction){
+            
+            if($interaction->check == 'yes'){
+
+            $interaction->check = 'no';
+            $interaction->save();
+
+            }else{
+
+                $interaction->check = 'yes';
+                $interaction->save();
+
+            } 
+
+        }else{
+
+            Interaction::insert([
+                'ip' => $user_ip,
+                'post_id' => $req->post_id,
+                'check' => 'yes'
+            ]);
+
+        }
+
 
     }
 
