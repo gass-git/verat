@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\http\Controllers\PostController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,17 +23,22 @@ Route::get('/home_sortby={field}', [HomeController::class, 'sortby']);
 
 Route::get('/home_topic={field}',[HomeController::class, 'show_topic']);
 
+Route::get('/show_bookmarks', [HomeController::class, 'show_bookmarks']);
+
+Route::get('/dashboard', [DashboardController::class, 'show'])->middleware('auth');
+
 Route::post('/bookmark', [HomeController::class, 'bookmark']);
 
 Route::post('/check_card', [HomeController::class, 'check_card']);
 
+
 Route::post('/post_comment={post_id}', [PostController::class, 'post_comment']);
 
-Route::post('/create_post', [PostController::class, 'insert']);
+Route::post('/create_post', [PostController::class, 'insert'])->middleware('auth');
 
-Route::post('/upload_image', [PostController::class, 'upload_image']);
+Route::post('/upload_image', [PostController::class, 'upload_image'])->middleware('auth');
 
-Route::post('/delete_image', [PostController::class, 'delete_image']);
+Route::post('/delete_image', [PostController::class, 'delete_image'])->middleware('auth');
 
 Route::post('/like_post', [PostController::class, 'like_post']);
 

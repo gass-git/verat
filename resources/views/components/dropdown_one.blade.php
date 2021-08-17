@@ -8,7 +8,7 @@
     <a class="dropdown-item" href="{{ url('/home_sortby=latest') }}">Latest</a>
     <a class="dropdown-item" href="{{ url('/home_sortby=views') }}">Views</a>
     <a class="dropdown-item" href="{{ url('/home_sortby=popularity') }}">Popularity</a>
-    <a class="dropdown-item" href="#">Comments</a>
+    <a class="dropdown-item" href="{{ url('/home_sortby=comments') }}">Comments</a>
   </div>
 
 </div>

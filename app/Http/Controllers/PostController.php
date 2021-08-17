@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Log;
 use App\Models\Interaction;
 use App\Models\Images;
 use App\Models\PostVisit;
@@ -60,6 +61,7 @@ class PostController extends Controller
             'cover_url' => 'http://verat.test/storage/post-covers/'.$img_new_name,
             'likes' => 0,
             'views' => 0,
+            'comments' => 0,
             'created_at' => Carbon::now()
         ]);
 
@@ -154,7 +156,10 @@ class PostController extends Controller
 
         $user_ip = request()->ip();
 
+        $post = Post::where('id', $post_id)->first();
 
+        $post->comments += 1;
+        $post->save();
 
         Comment::insert([
             'author_ip' => $user_ip,
@@ -163,6 +168,19 @@ class PostController extends Controller
             'post_id' => $post_id,
             'admin_praise' => null,
             'admin_reply' => null
+        ]);
+
+        if(empty($req->name)){
+            $author = 'Someone';
+        }else{
+            $author = $req->name;
+        }
+       
+        Log::insert([
+            'from' => $author,
+            'event' => 'wrote a comment',
+            'post_id' => $req->post_id,
+            'created_at' => Carbon::now()
         ]);
 
         return back();

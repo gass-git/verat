@@ -37,21 +37,45 @@
 
 <body style="background-color: #f6f8fa;">
     <div style="padding:50px 0 50px 0;min-height:calc(99vh - 70px - 50px);">
-        <div class="mx-auto" style="width:90%;max-width:970px;">
+        <div class="mx-auto" style="width:90%;max-width:1170px;">
 
             <div class="d-flex flex-wrap">
         
-                @foreach($posts as $post)
+                @if(empty($bookmarks))
+                    
+                    @foreach($posts as $post)
 
-                    @include('components/post_card')
+                        @include('components/post_card')
                 
-                @endforeach
+                    @endforeach
+                
+                    </div>
 
-            </div>
+                    <div class="mt-4" style="margin-left:14px;">
+                        {{ $posts->links() }}
+                    </div>
 
-            <div class="mt-4" style="margin-left:14px;">
-                {{ $posts->links() }}
-            </div>
+                @else
+
+                    @foreach($bookmarks as $bookmark)
+
+                        @php
+                        
+                            $post = App\Models\Post::where('id', $bookmark->post_id)->first();
+
+                        @endphp
+
+                        @include('components/post_card')
+            
+                    @endforeach
+                
+                </div>
+
+                    <div class="mt-4" style="margin-left:14px;">
+                        {{ $bookmarks->links() }}
+                    </div>
+                    
+                @endif
 
         </div>
     </div>    
@@ -60,8 +84,8 @@
 <script>
     $(document).ready(function(){
         $(".card").hover(
-            function() { $(this).addClass('shadow').css('cursor', 'pointer') }, 
-            function() { $(this).removeClass('shadow') }
+            function() { $(this).addClass('shadow-lg').css('cursor', 'pointer') }, 
+            function() { $(this).removeClass('shadow-lg') }
         );
     });
 

@@ -10,7 +10,7 @@
 
 @endphp
 
-<div class="card m-3" style="width: 18rem;">
+<div class="card m-3 shadow-sm" style="width: 320px;">
     
     <a href="post={{ $post->id }}">
 
@@ -18,15 +18,15 @@
     
         <div class="card-body">
             
-            <h5 class="card-title" style="color:black">{{ $post->title }}</h5>
+            <h5 class="card-title" style="color:black;height:70px;">{{ $post->title }}</h5>
 
             @include('components/pills')
 
         </div>  
 
-        <div class="card-footer" style="background-color:#FE9898;cursor:">
+        <div class="card-footer" style="background-color:rgb(247, 247, 247);border-radius:0;">
 
-            <small class="text-muted" style="color:white!important">Written: {{ date('F d, Y', strtotime($post->created_at)) }}</small>
+            <small class="text-muted" style="color:#2e2e2e!important">― Written on {{ date('F d, Y', strtotime($post->created_at)) }}</small>
 
         </div>
 

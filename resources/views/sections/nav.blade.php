@@ -44,8 +44,8 @@
   </div>
 
   <div class="mt-4 mr-5">
-    <a href="#" class="nav-item" id="dropdown-two" style="color:white;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Show Bookmarked
+    <a href="{{ url('/show_bookmarks') }}" class="nav-item" style="color:white;">
+      Bookmarked
     </a>
   </div>
 

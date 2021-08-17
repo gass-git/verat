@@ -45,27 +45,35 @@ class HomeController extends Controller
 
     public function sortby($field){
 
+        $IP = request()->ip();
+
         if($field == 'latest'){
             $posts = Post::orderBy('created_at', 'DESC')->paginate(6);
         }
 
         if($field == 'views'){
-            $posts = Post::orderby($field,'DESC')->paginate(6);
+            $posts = Post::orderby('views','DESC')->paginate(6);
         }
 
         if($field == 'popularity'){
             $posts = Post::orderby('likes','DESC')->paginate(6);
         }
 
-        return view('layouts/home', compact('posts'));
+        if($field == 'comments'){
+            $posts = Post::orderby('comments','DESC')->paginate(6);
+        }
+
+        return view('layouts/home', compact('posts','IP'));
 
     }
 
     public function show_topic($field){
 
+        $IP = request()->ip();
+
         $posts = Post::where('category', $field)->paginate(6);
 
-        return view('layouts/home', compact('posts','field'));
+        return view('layouts/home', compact('posts','field','IP'));
 
     }
 
@@ -98,6 +106,16 @@ class HomeController extends Controller
             ]);
 
         }
+    }
+
+    public function show_bookmarks(){
+
+        $IP = request()->ip();
+
+        $bookmarks = Interaction::where('ip', $IP)->where('bookmark','yes')->paginate(6);
+
+        return view('layouts/home', compact('bookmarks','IP'));
+
     }
 
     public function check_card(Request $req){
