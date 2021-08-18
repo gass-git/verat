@@ -5,5 +5,5 @@
     @include('sections/nav')
     @include('sections/home_body')
     @include('sections/footer')
-    
+
 </html>

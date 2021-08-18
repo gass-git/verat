@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use App\Models\Log;
 use App\Models\Interaction;
 use App\Models\Images;
@@ -46,6 +48,12 @@ class PostController extends Controller
 
         return view('layouts/post',compact('post','post_id','like','comments','checked'));
 
+    }
+
+    public function post_form(){
+        
+        return view('layouts/create_post');
+    
     }
 
     public function insert(Request $req){
@@ -183,6 +191,7 @@ class PostController extends Controller
             'created_at' => Carbon::now()
         ]);
 
+        toast("Comment sent!",'success');
         return back();
 
     }

@@ -56,8 +56,14 @@
             Admin login
         </a>
 
+        <span class="ml-1 mr-1"> - </span>
+
+        <a href="/register">
+            Staff registration
+        </a>
+
     </div>
-    
-    
 
 </footer>
+
+@include('sweetalert::alert')

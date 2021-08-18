@@ -32,7 +32,7 @@
 
             <h3 class="ml-2">Recent Activity</h3>
             
-            <div class="list-group mt-3">
+            <div class="list-group mt-3 mb-5">
 
                 @foreach($logs as $log)
 
