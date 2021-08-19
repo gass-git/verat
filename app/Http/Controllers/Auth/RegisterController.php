@@ -53,6 +53,10 @@ class RegisterController extends Controller
 
         $key = env("REGISTER_KEY",null);
 
+        if( $data['key'] != $key ){
+            toast("The register key is not valid",'error');
+        }
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
