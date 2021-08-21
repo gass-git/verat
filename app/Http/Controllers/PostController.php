@@ -15,6 +15,7 @@ use App\Models\Comment;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
@@ -58,8 +59,35 @@ class PostController extends Controller
     }
 
     const categories = ['laravel','javascript','html', 'css', 'php'];
+    const fields = ['img','title','post'];
 
     public function insert(Request $req){
+
+        foreach(self::fields as $input){
+            
+            if(empty($req->$input)){
+
+                toast('Make sure to fill all fields.','info');
+                return back()->withInput();
+
+            }
+        
+        }
+
+        $count = 0;
+
+        foreach(self::categories as $category){
+
+            if($req->$category){ $count++; }
+
+        }
+
+        if($count == 0){ 
+
+            toast('You need to select at least one category.','info');
+            return back()->withInput();
+
+        }
 
         $img_new_name = date('dmy_H_s_i');
 

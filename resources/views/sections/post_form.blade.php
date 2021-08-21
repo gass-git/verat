@@ -18,12 +18,12 @@
 
                 <div class="form-group">
                     <label>Title</label>
-                    <input name="title" class="form-control">
+                    <input name="title" class="form-control" value="{{ old('title') }}" >
                 </div>
 
                 <div class="form-group">
                     <label>Post body</label>
-                    <textarea id="textarea" name="post" class="form-control" rows="10"></textarea>
+                    <textarea id="textarea" name="post" class="form-control" rows="10">{{ old('post') }}</textarea>
                 </div>
 
 

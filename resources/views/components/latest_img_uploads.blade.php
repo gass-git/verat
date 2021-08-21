@@ -2,11 +2,16 @@
 
     use App\Models\Images;
 
+    $images_count = Images::count();
     $images = Images::orderBy('id','DESC')->take(5)->get();
 
 @endphp
 
-Last images uploaded
+@if($images_count < 1)
+    <div>No images have been uploaded</div>
+@else
+    <div>Last images uploaded</div>
+@endif
 
 <div class="mb-5">
 
