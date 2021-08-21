@@ -4,10 +4,12 @@
     Topics
   </a>
 
-  <div class="dropdown-menu mt-1" style="font-size:14px"  aria-labelledby="dropdown-two">
-    <a class="dropdown-item" href="{{ url('/home_topic=jquery') }}">jQuery</a>
-    <a class="dropdown-item" href="{{ url('/home_topic=css') }}">CSS</a>
+  <div class="dropdown-menu mt-2 shadow-sm" style="font-size:14px"  aria-labelledby="dropdown-two">
     <a class="dropdown-item" href="{{ url('/home_topic=laravel') }}">Laravel</a>
+    <a class="dropdown-item" href="{{ url('/home_topic=javascript') }}">JavaScript</a>
+    <a class="dropdown-item" href="{{ url('/home_topic=php') }}">PHP</a>
+    <a class="dropdown-item" href="{{ url('/home_topic=html') }}">HTML</a>
+    <a class="dropdown-item" href="{{ url('/home_topic=css') }}">CSS</a>
   </div>
 
 </div>

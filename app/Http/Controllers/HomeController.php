@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Interaction;
 use App\Models\Post;
 use Carbon\Carbon;
 use App\Models\UniqueVisit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -71,7 +73,9 @@ class HomeController extends Controller
 
         $IP = request()->ip();
 
-        $posts = Post::where('category', $field)->paginate(6);
+        $posts = DB::table('posts')->join('categories','posts.id','categories.post_id')
+                    ->where('categories.category', $field)
+                    ->paginate(6); 
 
         return view('layouts/home', compact('posts','field','IP'));
 

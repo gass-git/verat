@@ -21,7 +21,6 @@ class CreatePostsTable extends Migration
             $table->string('cover_url')->nullable();
             $table->integer('views')->nullable();
             $table->integer('comments')->nullable();
-            $table->string('category')->nullable();
             $table->timestamps();
         });
     }

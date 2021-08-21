@@ -17,11 +17,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Category</label>
-                    <input name="category" class="form-control">
-                </div>
-
-                <div class="form-group">
                     <label>Title</label>
                     <input name="title" class="form-control">
                 </div>
@@ -31,9 +26,23 @@
                     <textarea id="textarea" name="post" class="form-control" rows="10"></textarea>
                 </div>
 
-                <button type="submit">Save</button>
+
+                <div class="form-group">
+                    <label style="font-size:15px">Select Categories</label>
+                    <div class="mb-2 mt-2" style="font-size:30px">
+                
+                        @include('components/categories')
+            
+                    </div>
+                </div>
+
+                <button class="btn btn-dark mt-3" type="submit">Publish Post</button>
 
             </form>
+
+            
+
+            
 
             <div class="mt-4 mb-4">
                 <form action="{{ url('/upload_image') }}" method="post" enctype="multipart/form-data">
@@ -43,7 +52,7 @@
                             <input name="post_img" type="file" class="form-control-file" >
                         </div>
 
-                        <button type="submit">upload</button>
+                        <button class="btn btn-dark mt-3" type="submit">upload</button>
 
                 </form>
             </div>

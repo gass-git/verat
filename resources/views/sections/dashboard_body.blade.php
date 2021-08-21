@@ -32,21 +32,28 @@
 
             <h3 class="ml-2">Recent Activity</h3>
             
-            <div class="list-group mt-3 mb-5">
+                <div class="list-group mt-3 mb-5">
 
-                @foreach($logs as $log)
+                    @if(empty($logs->event))
+                            
+                        <div class="list-group-item list-group-item-action">No recent activity</div>
+                
+                    @else
 
-                    <a href="{{ url('/post='.$log->post_id) }}" class="list-group-item list-group-item-action">
-                        <span style="text-transform:capitalize;"><b>{{ $log->from }}</b></span>
-                        <span>{{ $log->event }}</span>
-                        <span>on post {{ $log->post_id }}</span>
-                        <span style="float:right">{{ $log->created_at }}</span>
-                    </a>
-                    
-                @endforeach
-                    
-            </div>
+                        @foreach($logs as $log)
 
+                            <a href="{{ url('/post='.$log->post_id) }}" class="list-group-item list-group-item-action">
+                                <span style="text-transform:capitalize;"><b>{{ $log->from }}</b></span>
+                                <span>{{ $log->event }}</span>
+                                <span>on post {{ $log->post_id }}</span>
+                                <span style="float:right">{{ $log->created_at }}</span>
+                            </a>
+                            
+                        @endforeach
+                        
+                    @endif
+
+                </div>
 
         </div>
     </body>  

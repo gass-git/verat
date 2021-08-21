@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Log;
@@ -56,6 +57,8 @@ class PostController extends Controller
     
     }
 
+    const categories = ['laravel','javascript','html', 'css', 'php'];
+
     public function insert(Request $req){
 
         $img_new_name = date('dmy_H_s_i');
@@ -63,7 +66,6 @@ class PostController extends Controller
         $req->file('img')->storeAs('post-covers', $img_new_name, 'public');
 
         Post::insert([
-            'category' => $req->category,
             'title' => $req->title,
             'body' => $req->post,
             'cover_url' => 'http://verat.test/storage/post-covers/'.$img_new_name,
@@ -72,6 +74,22 @@ class PostController extends Controller
             'comments' => 0,
             'created_at' => Carbon::now()
         ]);
+
+        $post_id = Post::max('id');
+
+        foreach(self::categories as $category){
+
+            if($req->$category){
+
+                Category::insert([
+                    'post_id' => $post_id,
+                    'category' => $req->$category
+                ]);
+
+            }
+        }
+
+        
 
         return redirect()->route('home');
 

@@ -5,14 +5,14 @@
     
     <title>{{ config('app.name') }}</title>
 
+    <!-- jQuery library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-
-    <link rel="stylesheet" href="css/jquery-ui.css">
     
+    <!-- Font Awesome  CDN -->
     <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 
+    <!-- Popper script -->
     <script src="js/popper.min.js"></script>
 
     <!-- Bootstrap CDN -->

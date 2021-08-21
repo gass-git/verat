@@ -19,4 +19,10 @@ class Post extends Model
 
     protected $table = 'posts';
     
+    public function category(){
+
+        return $this->hasMany( 'App\Category' , 'post_id' );
+
+    }
+
 }
