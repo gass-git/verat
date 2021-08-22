@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 use App\Models\Log;
 use App\Models\Interaction;
 use App\Models\Images;
@@ -14,8 +12,6 @@ use App\Models\PraiseRecord;
 use App\Models\Comment;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
@@ -42,9 +38,7 @@ class PostController extends Controller
             ]);
 
         }
-
-        
-            
+   
         $like = PraiseRecord::where('ip', $user_ip)->where('post_id', $post_id)->first();
         $checked = Interaction::where('ip', $user_ip)->where('post_id', $post_id)->where('check', 'yes')->first();
 
@@ -116,8 +110,6 @@ class PostController extends Controller
 
             }
         }
-
-        
 
         return redirect()->route('home');
 
@@ -203,7 +195,6 @@ class PostController extends Controller
 
         }
 
-
     }
 
     public function post_comment(Request $req, $post_id){
@@ -221,7 +212,8 @@ class PostController extends Controller
             'comment' => $req->comment,
             'post_id' => $post_id,
             'admin_praise' => null,
-            'admin_reply' => null
+            'admin_reply' => null,
+            'created_at' => Carbon::now()
         ]);
 
         if(empty($req->name)){
@@ -258,6 +250,24 @@ class PostController extends Controller
             $comment->save();
             
         }
+    }
+
+    public function reply_comment(Request $req){
+
+        if(empty($req->msg)){
+
+            toast('The reply could not be published because the message field is empty.','error');
+            return back();
+        }
+        
+        comment::where('id', $req->comment_id)
+            ->update([
+                'admin_reply' => $req->msg
+            ]);
+        
+        toast('Reply successfuly published.','success');
+        return back();
+
     }
 
 }

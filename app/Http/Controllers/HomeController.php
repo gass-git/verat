@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Interaction;
 use App\Models\Post;
 use Carbon\Carbon;
@@ -54,15 +53,15 @@ class HomeController extends Controller
         }
 
         if($field == 'views'){
-            $posts = Post::orderby('views','DESC')->paginate(6);
+            $posts = Post::orderBy('views','DESC')->paginate(6);
         }
 
         if($field == 'popularity'){
-            $posts = Post::orderby('likes','DESC')->paginate(6);
+            $posts = Post::orderBy('likes','DESC')->paginate(6);
         }
 
         if($field == 'comments'){
-            $posts = Post::orderby('comments','DESC')->paginate(6);
+            $posts = Post::orderBy('comments','DESC')->paginate(6);
         }
 
         return view('layouts/home', compact('posts','IP'));
@@ -150,9 +149,7 @@ class HomeController extends Controller
                 'check' => 'yes'
             ]);
 
-
         }
-
     }
 
 }

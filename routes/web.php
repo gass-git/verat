@@ -35,7 +35,7 @@ Route::post('/like_post', [PostController::class, 'like_post']);
 
 Route::post('/check_post', [PostController::class, 'check_post']);
 
-
+Route::post('/reply_comment', [PostController::class, 'reply_comment']);
 
 Route::post('/like_comment',[PostController::class, 'like_comment'])->middleware('auth');
 
