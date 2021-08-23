@@ -16,14 +16,15 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     
-    public function show($post_id){
+    public function show($post_id, $scroll){
 
         $user_ip = request()->ip();
 
         $post = Post::where('id', $post_id)->first();
         $post_id = $post->id;
 
-        $comments = Comment::where('post_id', $post_id)->get();
+        $comments = Comment::where('post_id', $post_id)->orderBy('id','DESC')->get();
+        $comments_count = Comment::where('post_id', $post_id)->count();
 
         $visit_exists = PostVisit::where('ip',$user_ip)->where('post_id',$post_id)->first();
 
@@ -38,11 +39,17 @@ class PostController extends Controller
             ]);
 
         }
+
+        if($scroll == 'scroll'){
+            $scroll = true;
+        }else{
+            $scroll = false;
+        }
    
         $like = PraiseRecord::where('ip', $user_ip)->where('post_id', $post_id)->first();
         $checked = Interaction::where('ip', $user_ip)->where('post_id', $post_id)->where('check', 'yes')->first();
 
-        return view('layouts/post',compact('post','post_id','like','comments','checked'));
+        return view('layouts/post',compact('post','post_id','like','comments','comments_count','checked','scroll'));
 
     }
 

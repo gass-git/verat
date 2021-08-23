@@ -35,7 +35,7 @@
     }
 </style>
 
-<div class="mt-5" style="max-width:650px;">
+<div class="mt-5" style="max-width:680px;">
 
     @foreach($comments as $data)
 
@@ -47,7 +47,7 @@
                 <b class="ml-4 mb-2"> Someone </b>
             @endif
                 
-                <p class="ml-4 mr-4">{{ $data->comment }}</p>
+                <p class="ml-4 mr-0">{{ $data->comment }}</p>
 
                 @include('components/comment_footer')
 

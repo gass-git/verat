@@ -24,7 +24,7 @@
 
 <div class="card m-3 shadow-sm" style="width: 320px;">
     
-    <a href="post={{ $post_id }}">
+    <a href="post={{ $post_id }}+no_scroll">
 
         <img class="card-img-top" src="{{ $post->cover_url }}" height="170px" width="200px">
     

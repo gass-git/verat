@@ -7,6 +7,7 @@
 
 <body style="background-color: #f6f8fa;">
     <div style="min-height:calc(99vh - 70px - 50px);">
+        
         <div class="form-wrapper mx-auto pt-5">
 
             <form action="{{ url('/create_post') }}" method="post" enctype="multipart/form-data">
@@ -40,10 +41,6 @@
 
             </form>
 
-            
-
-            
-
             <div class="mt-4 mb-4">
                 <form action="{{ url('/upload_image') }}" method="post" enctype="multipart/form-data">
                     @csrf
@@ -60,5 +57,6 @@
             @include('components/latest_img_uploads')
 
         </div> 
+        
     </div>       
 </body>    
