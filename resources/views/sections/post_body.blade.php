@@ -1,5 +1,10 @@
 <style>
-
+.post-body p{
+    color:grey;
+    line-height:30px;
+    text-align:justify;
+    font-size:20px;
+}
 </style>
 
 <body style="background-color: #f6f8fa;">
@@ -16,13 +21,11 @@
             </div>
         </div>
 
-        <h5 class="mt-4" style="color:grey;line-height:30px;text-align:justify">
+        <div class="post-body mt-4">
             
-            <p>
-                {!! nl2br($post->body) !!} 
-            </p>    
-        
-        </h5>
+                {!! $post->body !!}
+               
+        </div>
         
         <div class="d-flex" section="comments" style="height:60px;margin:50px 0 0 0;">
 

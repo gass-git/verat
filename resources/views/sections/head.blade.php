@@ -15,6 +15,8 @@
     <!-- Popper script -->
     <script src="js/popper.min.js"></script>
 
+    <link rel="stylesheet" href="css/prism-tomorrow.css" />
+
     <!-- Bootstrap CDN -->
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css?v=2">

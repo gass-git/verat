@@ -33,6 +33,15 @@
     .check-btn:hover{
         background-color:rgba(255, 255, 255, 0.9);
     }
+    .page-item.active .page-link {
+        z-index: 1;
+        color: #fff;
+        background-color: #383838; 
+        border-color: #2e2e2e; 
+    }
+    .page-link{
+        color:#2e2e2e;
+    }
 </style>
 
 <body style="background-color: #f6f8fa;">

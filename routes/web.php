@@ -8,7 +8,7 @@ use App\Http\Controllers\DashboardController;
 
 /** -------- HomeController Routes ---------- */
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/home_sortby={field}', [HomeController::class, 'sortby']);
 Route::get('/home_topic={field}',[HomeController::class, 'show_topic']);
 Route::get('/show_bookmarks', [HomeController::class, 'show_bookmarks']);
