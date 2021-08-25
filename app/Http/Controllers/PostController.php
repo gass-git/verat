@@ -97,7 +97,7 @@ class PostController extends Controller
         Post::insert([
             'title' => $req->title,
             'body' => $req->post,
-            'cover_url' => 'http://verat.test/storage/post-covers/'.$img_new_name,
+            'cover_url' => 'https://blog.gass.dev/storage/post-covers/'.$img_new_name,
             'likes' => 0,
             'views' => 0,
             'comments' => 0,
