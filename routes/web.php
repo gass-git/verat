@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\http\Controllers\PostController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\DashboardController;
 
 /** -------- HomeController Routes ---------- */
