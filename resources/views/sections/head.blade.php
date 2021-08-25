@@ -2,7 +2,8 @@
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <link rel="icon" type="image/png" href="images/coffee-favicon.png?v=3" />
+
     <title>{{ config('app.name') }}</title>
 
     <!-- jQuery library -->
@@ -15,6 +16,7 @@
     <!-- Popper script -->
     <script src="js/popper.min.js"></script>
 
+    <!-- Prism styles -->
     <link rel="stylesheet" href="css/prism-tomorrow.css" />
 
     <!-- Bootstrap CDN -->

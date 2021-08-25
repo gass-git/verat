@@ -8,13 +8,9 @@
     use App\Models\Category;
 
     if($post->post_id){
-
         $post_id = $post->post_id;
-
     }else{
-
         $post_id = $post->id;
-
     }
 
     $interaction = Interaction::where('ip', $IP)->where('post_id', $post_id)->first();
@@ -32,7 +28,7 @@
             
             <h5 class="card-title" style="color:black;height:70px;">{{ $post->title }}</h5>
 
-            @include('components/pills')
+            @include('components/home/pills')
 
         </div>  
 

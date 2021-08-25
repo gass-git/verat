@@ -1,59 +1,66 @@
 <style>
-    #snippet {
-        width: 100%;
-        max-width:680px;
-        height: auto;
+    .dashboard-container{
+        width:70%;
+        margin-top:70px;
+        min-height:80vh;
+        max-width:800px;
     }
-    </style>
+    .dashboard-container .col-sm-4{
+        text-align:center;
+        border-right: 1px solid rgb(216, 216, 216);
+    }
+</style>
     
-    <body style="background-color: #f6f8fa;">
-        <div class="mx-auto" style="width:70%;margin-top:70px;min-height:80vh;max-width:800px;">
+<body style="background-color: #f6f8fa;">
+    <div class="dashboard-container mx-auto">
+    
+        <h3 class="pb-1 ml-2">Summary</h3>
+
+        <div class="row p-3 border" style="margin:10px 3px 50px 3px;border-radius:5px;">
+
+            <div class="col-sm-4">
+                <div class="pt-4" >12</div>
+                <div class="pt-2" >Posts</div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="pt-4" >12</div>
+                <div class="pt-2" >Likes</div>
+            </div>
+
+            <div class="col-sm-4" style="border-right: none">
+                <div class="pt-4" >12</div>
+                <div class="pt-2" >Comments</div>
+            </div>
+
+        </div>    
+
+        <h3 class="ml-2">
+            Recent Activity
+        </h3>
         
-            <h3 class="pb-1 ml-2">Summary</h3>
+        <div class="list-group mt-3 mb-5">
 
-            <div class="row p-3 mb-5 border" style="margin:10px 3px 10px 3px;border-radius:5px;">
+            @if($logs_count > 0)
+                    
+                @foreach($logs as $log)
 
-                <div class="col-sm-4" style="text-align:center;border-right: 1px solid rgb(216, 216, 216);">
-                    <div class="pt-4" >12</div>
-                    <div class="pt-2" >Posts</div>
-                </div>
-
-                <div class="col-sm-4" style="text-align:center;border-right: 1px solid rgb(216, 216, 216);">
-                    <div class="pt-4" >12</div>
-                    <div class="pt-2" >Likes</div>
-                </div>
-
-                <div class="col-sm-4" style="text-align:center;">
-                    <div class="pt-4" >12</div>
-                    <div class="pt-2" >Comments</div>
-                </div>
-
-            </div>    
-
-            <h3 class="ml-2">Recent Activity</h3>
-            
-                <div class="list-group mt-3 mb-5">
-
-                    @if($logs_count > 0)
-                          
-                        @foreach($logs as $log)
-
-                            <a href="/post={{$log->post_id}}+scroll" class="list-group-item list-group-item-action">
-                                <span style="text-transform:capitalize;"><b>{{ $log->from }}</b></span>
-                                <span>{{ $log->event }}</span>
-                                <span>on post {{ $log->post_id }}</span>
-                                <span style="float:right">{{ $log->created_at }}</span>
-                            </a>
-                        
-                        @endforeach
+                    <a href="/post={{$log->post_id}}+scroll" class="list-group-item list-group-item-action">
+                        <span style="text-transform:capitalize;"><b>{{ $log->from }}</b></span>
+                        <span>{{ $log->event }}</span>
+                        <span>on post {{ $log->post_id }}</span>
+                        <span style="float:right">{{ $log->created_at }}</span>
+                    </a>
                 
-                    @else
+                @endforeach
+        
+            @else
 
-                        <div class="list-group-item list-group-item-action">No recent activity</div>
-                        
-                    @endif
-
-                </div>
+                <div class="list-group-item list-group-item-action">No recent activity</div>
+                
+            @endif
 
         </div>
-    </body>  
+
+    </div>
+</body>  

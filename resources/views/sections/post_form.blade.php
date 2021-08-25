@@ -32,7 +32,7 @@
                     <label style="font-size:15px">Select Categories</label>
                     <div class="mb-2 mt-2" style="font-size:30px">
                 
-                        @include('components/categories')
+                        @include('components/create_post/categories')
             
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                 </form>
             </div>
 
-            @include('components/latest_img_uploads')
+            @include('components/create_post/latest_img_uploads')
 
         </div> 
         

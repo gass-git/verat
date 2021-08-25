@@ -49,7 +49,7 @@
                 
                 <p class="ml-4 mr-0">{{ $data->comment }}</p>
 
-                @include('components/comment_footer')
+                @include('components/post/comment_footer')
 
         </div>
         
@@ -66,7 +66,7 @@
 
 </div>
 
-@include('components/reply_modal')
+@include('components/post/reply_modal')
 
 <script>
 

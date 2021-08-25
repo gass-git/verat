@@ -26,21 +26,18 @@
 
 <div class="bar h-100 d-flex text-white">
   
-
   <!-- Blog title -->
   <a class="web-title mt-3 ml-5 mr-auto" href="/">
-  
-    @include('components/logo')
-
+    @include('components/navbar/logo')
   </a>
 
   <!-- Nav items -->
    <div class="mt-4 mr-5">
-    @include('components/dropdown_one')
+    @include('components/navbar/dropdown_one')
   </div>  
 
   <div class="mt-4 mr-5">
-    @include('components/dropdown_two')
+    @include('components/navbar/dropdown_two')
   </div>
 
   <div class="mt-4 mr-5">
@@ -51,15 +48,14 @@
 
   @auth 
     <div class="mt-4 mr-5">
-      @include('components/admin_dropdown')
+      @include('components/navbar/admin_dropdown')
     </div>
   @endauth
 
   <!-- Unique visitors -->
   <div class="mr-3" style="margin-top:20px;">
-    @include('components/visits_counter')
+    @include('components/navbar/visits_counter')
   </div>
-
 
 </div>
 

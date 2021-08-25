@@ -42,18 +42,18 @@
         </div>
 
         <div class="collapse" id="collapseComments" style="border:1px solid transparent;">
-            @include('components/comments')
+            @include('components/post/comments')
         </div>
 
         <!-- Add space from the bottom of the page -->
         <div style="height:50px;" id="bottom-div"></div>
 
-        @include('components/comment_modal')
+        @include('components/post/comment_modal')
 
     </div>
 
-    @include('components/check_btn')
-    @include('components/like_post_btn')
+    @include('components/post/check_btn')
+    @include('components/post/like_post_btn')
 
 </body>    
 

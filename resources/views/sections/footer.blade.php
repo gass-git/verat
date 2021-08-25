@@ -2,6 +2,8 @@
     footer{
         height:50px;
         background:#f6f8fa;
+        border-top:1px solid rgb(226, 226, 226);
+        text-align:center
     }
     .dash-circuit{
         height:90px; 
@@ -32,7 +34,7 @@
     }
 </style>
 
-<footer style="border-top:1px solid rgb(226, 226, 226);text-align:center">
+<footer>
     
     <div class="d-flex justify-content-center" style="margin-top:13px;font-size:13px;">
         

@@ -53,8 +53,10 @@
         <span></span>
     </div>
     
+    {{--
     <div class="ml-4">
-        <!-- Web title -->
+        {{ config('app.name') }} 
     </div>    
+    --}}
 
 </div>

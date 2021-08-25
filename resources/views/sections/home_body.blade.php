@@ -15,6 +15,7 @@
         font-size:20px;
         text-align:center;
         z-index:99;
+        cursor: pointer;
     }
     .bookmark-btn:hover{
         background-color:rgba(255, 255, 255, 0.9);
@@ -50,117 +51,107 @@
 
             <div class="d-flex flex-wrap">
         
-                @if(empty($bookmarks))
-                    
-                    @foreach($posts as $post)
-
-                        @include('components/post_card')
+            @if(empty($bookmarks))
                 
-                    @endforeach
-                
-                    </div>
+                @foreach($posts as $post)
 
-                    <div class="mt-4" style="margin-left:14px;">
-                        {{ $posts->links() }}
-                    </div>
+                    @include('components/home/post_card')
 
-                @else
-
-                    @foreach($bookmarks as $bookmark)
-
-                        @php
-                        
-                            $post = App\Models\Post::where('id', $bookmark->post_id)->first();
-
-                        @endphp
-
-                        @include('components/post_card')
+                @endforeach
             
-                    @endforeach
-                
-                </div>
+            </div>
 
-                    <div class="mt-4" style="margin-left:14px;">
-                        {{ $bookmarks->links() }}
-                    </div>
+            <div class="mt-4" style="margin-left:14px;">
+                {{ $posts->links() }}
+            </div>
+
+            @else
+
+                @foreach($bookmarks as $bookmark)
+
+                    @php
                     
-                @endif
+                        $post = App\Models\Post::where('id', $bookmark->post_id)->first();
+
+                    @endphp
+
+                    @include('components/home/post_card')
+        
+                @endforeach
+            
+            </div>
+
+            <div class="mt-4" style="margin-left:14px;">
+                {{ $bookmarks->links() }}
+            </div>
+                
+            @endif
 
         </div>
     </div>    
 </body>
 
+<script src="js/card-hover-shadow.js"></script>
+
 <script>
-    $(document).ready(function(){
-        $(".card").hover(
-            function() { $(this).addClass('shadow-lg').css('cursor', 'pointer') }, 
-            function() { $(this).removeClass('shadow-lg') }
-        );
-    });
 
-    $('.check-btn').on('click',function(){
+    let grey = 'rgb(196, 196, 196)';
+    let red = 'rgb(201, 82, 35)';
+    let green = 'rgb(20, 128, 56)';
 
-        let post_id = $(this).attr('id');
-        let btn = $('#' + post_id + '.check-btn');
+$('.bookmark-btn').on('click',function(){
 
-        if(btn.css('color') === 'rgb(196, 196, 196)'){
+    let post_id = $(this).attr('id');
+    let btn = $('#' + post_id + '.bookmark-btn');
 
-            btn.css('color', 'rgb(20, 128, 56)');
+    if(btn.css('color') === grey){
+        btn.css('color', red);
+    }else{
+        btn.css('color', grey);
+    }
 
-        }else{
+    $.ajax({
 
-            btn.css('color', 'rgb(196, 196, 196)');
-
+        type: 'post',
+        url: "{{ url('/bookmark') }}",
+        data: {
+            _token: "{{ csrf_token() }}", post_id: post_id
+        },
+        success:function(){
+            // Do nothing
+        },
+        error:function(){
+            console.log('AJAX error')
         }
-
-        $.ajax({
-
-            type: 'post',
-            url: "{{ url('/check_card') }}",
-            data: {
-                _token: "{{ csrf_token() }}", post_id: post_id
-            },
-            success:function(){
-                // Do nothing
-            },
-            error:function(){
-                console.log('AJAX error')
-            }
-        });
-
     });
 
+});
 
-    $('.bookmark-btn').on('click',function(){
+$('.check-btn').on('click',function(){
 
-        let post_id = $(this).attr('id');
-        let btn = $('#' + post_id + '.bookmark-btn');
+    let post_id = $(this).attr('id');
+    let btn = $('#' + post_id + '.check-btn');
 
-        if(btn.css('color') === 'rgb(196, 196, 196)'){
+    if(btn.css('color') === grey){
+        btn.css('color', green);
+    }else{
+        btn.css('color', grey);
+    }
 
-            btn.css('color', 'rgb(201, 82, 35)');
+    $.ajax({
 
-        }else{
-
-            btn.css('color', 'rgb(196, 196, 196)');
-
+        type: 'post',
+        url: "{{ url('/check_card') }}",
+        data: {
+            _token: "{{ csrf_token() }}", post_id: post_id
+        },
+        success:function(){
+            // Do nothing
+        },
+        error:function(){
+            console.log('AJAX error')
         }
-
-        $.ajax({
-
-            type: 'post',
-            url: "{{ url('/bookmark') }}",
-            data: {
-                _token: "{{ csrf_token() }}", post_id: post_id
-            },
-            success:function(){
-                // Do nothing
-            },
-            error:function(){
-                console.log('AJAX error')
-            }
-        });
-
     });
 
+});
 </script>
