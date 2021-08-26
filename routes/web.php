@@ -27,7 +27,7 @@ Route::post('/reply_comment', [PostController::class, 'reply_comment']);
 Route::post('/like_comment',[PostController::class, 'like_comment'])->middleware('auth');
 Route::get('/post', [PostController::class, 'post_form'])->middleware('auth');
 Route::get('/post={post_id}+{scroll}',[PostController::class, 'show']);
-
+Route::post('/edit_post={post_id}',[PostController::class, 'edit'])->middleware('auth');
 
 /** -------- Other Routes ---------- */
 Route::get('/dashboard', [DashboardController::class, 'show'])->middleware('auth');

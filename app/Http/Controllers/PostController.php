@@ -21,7 +21,6 @@ class PostController extends Controller
         $user_ip = request()->ip();
 
         $post = Post::where('id', $post_id)->first();
-        $post_id = $post->id;
 
         $comments = Comment::where('post_id', $post_id)->orderBy('id','DESC')->get();
         $comments_count = Comment::where('post_id', $post_id)->count();
@@ -120,6 +119,14 @@ class PostController extends Controller
 
         return redirect()->route('home');
 
+    }
+    
+    public function edit(Request $req){
+
+        Post::where('id', $req->post_id)->update(['body' => $req->content]);
+
+        toast('Changes saved!','success');
+        return back();
     }
 
     public function upload_image(Request $req){

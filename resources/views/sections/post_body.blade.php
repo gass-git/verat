@@ -13,7 +13,7 @@
     
         <!-- Title -->
         <div>
-            <h1>
+            <h1 style="text-transform: capitalize">
                 {{ $post->title }}
             </h1>
             <div style="margin-top:-10px">
@@ -27,17 +27,25 @@
                
         </div>
         
+        
+
         <div class="d-flex" section="comments" style="height:60px;margin:50px 0 0 0;">
 
             @if($comments_count > 0)
-                <button class="btn btn-primary mr-3" style="width:200px;" id="show-comments-btn" data-toggle="collapse" href="#collapseComments" role="button" aria-expanded="false" aria-controls="collapseComments">
+                <button class="btn btn-primary mr-3" style="width:180px;" id="show-comments-btn" data-toggle="collapse" href="#collapseComments" role="button" aria-expanded="false" aria-controls="collapseComments">
                     <i class="fas fa-comments mr-2"></i>Show Comments
                 </button>
             @endif
 
-            <button class="btn btn-dark" style="width:200px;" data-toggle="modal" data-target="#comment-modal">
+            <button class="btn btn-dark mr-3" style="width:190px;" data-toggle="modal" data-target="#comment-modal">
                 <i class="fas fa-pen-alt mr-2"></i>Write a Comment
             </button>
+
+            @auth
+                <button class="btn btn-info" style="width:130px;" data-toggle="modal" data-target="#edit-modal">
+                    <i class="fas fa-edit mr-2"></i> Edit Post
+                </button>    
+            @endauth
 
         </div>
 
@@ -48,6 +56,7 @@
         <!-- Add space from the bottom of the page -->
         <div style="height:50px;" id="bottom-div"></div>
 
+        @include('components/post/edit_post_modal')
         @include('components/post/comment_modal')
 
     </div>
