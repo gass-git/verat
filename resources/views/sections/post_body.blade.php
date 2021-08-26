@@ -5,6 +5,10 @@
     text-align:justify;
     font-size:20px;
 }
+h1{
+    font-size:37px;
+}
+
 </style>
 
 <body style="background-color: #f6f8fa;">
@@ -17,7 +21,12 @@
                 {{ $post->title }}
             </h1>
             <div style="margin-top:-10px">
-                {{ date('F d, Y', strtotime($post->created_at)) }}
+                
+                @if($post->updated_at)
+                   Updated on {{ date('F d, Y', strtotime($post->updated_at)) }}
+                @else
+                   Written on {{ date('F d, Y', strtotime($post->created_at)) }}
+                @endif
             </div>
         </div>
 

@@ -123,7 +123,11 @@ class PostController extends Controller
     
     public function edit(Request $req){
 
-        Post::where('id', $req->post_id)->update(['body' => $req->content]);
+        Post::where('id', $req->post_id)->update([
+            'title' => $req->title,
+            'body' => $req->content,
+            'updated_at' => Carbon::now()
+        ]);
 
         toast('Changes saved!','success');
         return back();

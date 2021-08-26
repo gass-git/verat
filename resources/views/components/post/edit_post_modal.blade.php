@@ -16,9 +16,19 @@
             <form action="{{ url('edit_post='.$post_id) }}" method="post">
             @csrf
                 <div class="modal-body">
-                    <textarea class="form-control" id="message-text" name="content" rows="15">{{ $post->body }}</textarea>
-                    <input name="post_id" value="{{ $post_id }}" style="display:none">
-                    <button type="submit" class="btn btn-dark mt-3 mb-3" style="float:right">Save Changes</button>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Title</label>
+                        <input type="text" class="form-control" name="title" value="{{ $post->title }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Post Body</label>
+                        <textarea class="form-control" id="message-text" name="content" rows="15">{{ $post->body }}</textarea>
+                        <input name="post_id" value="{{ $post_id }}" style="display:none">
+                        <button type="submit" class="btn btn-dark mt-3 mb-3" style="float:right">Save Changes</button>
+                    </div>
+
                 </div>
 
             </form>  
