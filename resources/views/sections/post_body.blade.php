@@ -17,7 +17,7 @@ h1{
     
         <!-- Title -->
         <div>
-            <h1 style="text-transform: capitalize">
+            <h1>
                 {{ $post->title }}
             </h1>
             <div style="margin-top:-10px">
