@@ -141,7 +141,7 @@ class PostController extends Controller
         $req->file('post_img')->storeAs('post-images/'.$folder , $img_name, 'public');
         
         Images::insert([
-            'url' => 'http://verat.test/storage/post-images/'.$folder.'/'.$img_name
+            'url' => 'https://blog.gass.dev/storage/post-images/'.$folder.'/'.$img_name
         ]);
 
         return back();
