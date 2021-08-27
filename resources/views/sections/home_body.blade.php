@@ -1,5 +1,5 @@
 <style>
-     .card{
+    .card{
         border-radius: 0;
     }
     .card-img-top{

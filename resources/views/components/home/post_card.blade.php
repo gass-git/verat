@@ -1,7 +1,3 @@
-<style>
-   
-</style>
-
 @php
     
     use App\Models\Interaction;
@@ -34,7 +30,13 @@
 
         <div class="card-footer pt-2" style="background-color:rgb(247, 247, 247);border-radius:0;">
 
-            <small class="text-muted" style="color:#2e2e2e!important;font-size:12px; opacity:0.8;">― Written on {{ date('F d, Y', strtotime($post->created_at)) }}</small>
+            <small class="text-muted" style="color:#2e2e2e!important;font-size:12px; opacity:0.8;">
+                @if($post->updated_at)
+                    ― Updated on {{ date('F d, Y', strtotime($post->updated_at)) }}
+                @else
+                    ― Written on {{ date('F d, Y', strtotime($post->created_at)) }}
+                @endif
+            </small>
 
             <div style="margin:-5px 0; float:right;color:#2e2e2e!important;font-size:25px;">
 

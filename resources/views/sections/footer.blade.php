@@ -1,8 +1,7 @@
 <style>
     footer{
         height:50px;
-        background:#fff;
-        border-top:1px solid rgb(226, 226, 226);
+        border-top:1px solid rgb(216, 216, 216);
         text-align:center
     }
     .dash-circuit{
@@ -46,9 +45,7 @@
         
         <span class="ml-1 mr-1"> - Built by </span>
 
-
-
-        <a href="https://gabrielsalinas.codes" target="_blank">
+        <a href="https://gass.dev" target="_blank">
             Gass
         </a>
 
