@@ -1,7 +1,7 @@
 <style>
     footer{
         height:50px;
-        background:#f6f8fa;
+        background:#fff;
         border-top:1px solid rgb(226, 226, 226);
         text-align:center
     }

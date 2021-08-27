@@ -15,7 +15,7 @@ h5{
 
 </style>
 
-<body style="background-color: #f6f8fa;">
+<body style="background-color: #FAF1E6;">
     
     <div class="mx-auto" style="margin-top:70px;min-height:80vh;max-width:680px;">
     

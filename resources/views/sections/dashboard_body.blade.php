@@ -11,7 +11,7 @@
     }
 </style>
     
-<body style="background-color: #f6f8fa;">
+<body style="background-color: #FAF1E6;">
     <div class="dashboard-container mx-auto">
     
         <h3 class="pb-1 ml-2">Summary</h3>

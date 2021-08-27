@@ -5,7 +5,7 @@
     }
 </style>
 
-<body style="background-color: #f6f8fa;">
+<body style="background-color: #FAF1E6;">
     <div style="min-height:calc(99vh - 70px - 50px);">
         
         <div class="form-wrapper mx-auto pt-5">
