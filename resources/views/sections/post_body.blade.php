@@ -1,12 +1,16 @@
 <style>
 .post-body p{
+    margin:25px 0 20px 0;
     color:grey;
     line-height:30px;
     text-align:justify;
-    font-size:20px;
+    font-size:18px;
 }
 h1{
     font-size:37px;
+}
+h5{
+    margin:30px 0 20px 0;
 }
 
 </style>
@@ -37,7 +41,6 @@ h1{
         </div>
         
         
-
         <div class="d-flex" section="comments" style="height:60px;margin:50px 0 0 0;">
 
             @if($comments_count > 0)

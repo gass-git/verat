@@ -26,7 +26,7 @@
     
         <div class="card-body">
             
-            <h5 class="card-title" style="color:black;height:70px;">{{ $post->title }}</h5>
+            <h5 class="card-title" style="margin: -10px 0 15px 0;color:black;height:70px;">{{ $post->title }}</h5>
 
             @include('components/home/pills')
 
