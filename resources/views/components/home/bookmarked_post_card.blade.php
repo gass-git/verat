@@ -9,6 +9,8 @@
 
     $post = Post::where('id',$post_id)->first();
 
+    dd($post);
+     
     $interaction = Interaction::where('ip', $IP)->where('post_id', $post_id)->first();
     $categories = Category::where('post_id', $post_id)->get();
 
