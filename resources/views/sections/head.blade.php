@@ -23,6 +23,9 @@
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css?v=2">
 
+    <!-- Media -->
+    <link rel="stylesheet" href="css/media.css?v=7">
+
     <!-- App main style -->
     <link rel="stylesheet" href="css/custom_style.css?v=6">
 

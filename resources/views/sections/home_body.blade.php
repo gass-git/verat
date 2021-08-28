@@ -45,11 +45,11 @@
     }
 </style>
 
-<body style="background-color: #FAF1E6;">
-    <div style="padding:50px 0 50px 0;min-height:calc(99vh - 70px - 50px);">
-        <div class="mx-auto" style="width:90%;max-width:1170px;">
+<body style="background-color: #FAF1E6;min-width:443px;">
+    <div class="border" style="padding:50px 0 50px 0;min-height:calc(99vh - 70px - 50px);">
+        <div id="post-cards-wrapper" class="mx-auto border" style="max-width:1060px;padding:0!important;">
 
-            <div class="d-flex flex-wrap">
+            <div class="d-flex flex-wrap border">
         
             @if(empty($bookmarks))
                 

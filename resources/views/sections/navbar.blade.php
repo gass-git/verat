@@ -1,6 +1,7 @@
 <style>
   .bar{
     min-height:75px;
+    min-width: 443px;
     background-color: #2e2e2e;
   }
   .web-title{
@@ -53,7 +54,7 @@
   @endauth
 
   <!-- Unique visitors -->
-  <div class="mr-3" style="margin-top:20px;">
+  <div id="visit-counter" class="mr-3" style="margin-top:20px;">
     @include('components/navbar/visits_counter')
   </div>
 

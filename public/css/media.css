@@ -1,0 +1,9 @@
+@media screen and (max-width: 1061px) {
+    #post-cards-wrapper{max-width: 708px!important}
+}
+@media screen and (max-width: 800px) {
+    #visit-counter{display:none!important}
+}
+@media screen and (max-width: 800px) {
+    #post-cards-wrapper{max-width: 350px!important}
+}
