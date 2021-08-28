@@ -1,4 +1,10 @@
 <style>
+#post-wrapper{
+    margin-top:70px;
+    min-height:80vh;
+    max-width:680px;
+    min-width: 443px;;
+}
 .post-body p{
     margin:25px 0 20px 0;
     color:grey;
@@ -17,7 +23,7 @@ h5{
 
 <body style="background-color: #FAF1E6;">
     
-    <div class="mx-auto" style="margin-top:70px;min-height:80vh;max-width:680px;">
+    <div id="post-wrapper" class="mx-auto pl-5 pr-5">
     
         <!-- Title -->
         <div>
@@ -73,8 +79,10 @@ h5{
 
     </div>
 
-    @include('components/post/check_btn')
-    @include('components/post/like_post_btn')
+    <div id="praise-btns">
+        @include('components/post/check_btn')
+        @include('components/post/like_post_btn')
+    </div>
 
 </body>    
 

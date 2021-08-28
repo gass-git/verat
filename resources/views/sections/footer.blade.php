@@ -2,7 +2,8 @@
     footer{
         height:50px;
         border-top:1px solid rgb(216, 216, 216);
-        text-align:center
+        text-align:center;
+        min-width:443px;
     }
     .dash-circuit{
         height:90px; 

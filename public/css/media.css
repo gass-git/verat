@@ -6,4 +6,5 @@
 }
 @media screen and (max-width: 800px) {
     #post-cards-wrapper{max-width: 350px!important}
+    #praise-btns{display:none!important}
 }
