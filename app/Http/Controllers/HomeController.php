@@ -105,7 +105,8 @@ class HomeController extends Controller
             Interaction::insert([
                 'ip' => $user_ip,
                 'post_id' => $req->post_id,
-                'bookmark' => 'yes'
+                'bookmark' => 'yes',
+                'created_at' => Carbon::now()
             ]);
 
         }
