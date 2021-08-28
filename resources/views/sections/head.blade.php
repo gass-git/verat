@@ -1,7 +1,7 @@
 <head>
     
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta id="vp" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="images/coffee-favicon.png?v=3" />
 
     <title>{{ config('app.name') }}</title>
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css?v=2">
 
     <!-- Media -->
-    <link rel="stylesheet" href="css/media.css?v=7">
+    <link rel="stylesheet" href="css/media.css?v=8">
 
     <!-- App main style -->
     <link rel="stylesheet" href="css/custom_style.css?v=6">

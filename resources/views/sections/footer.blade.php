@@ -72,3 +72,12 @@
 <script src="prism.js"></script>
 
 @include('sweetalert::alert')
+
+<script>
+    window.onload = function() {
+        if (screen.width < 443) {
+            var mvp = document.getElementById('vp');
+            mvp.setAttribute('content','user-scalable=no,width=450');
+        }
+    }
+    </script>
