@@ -2,12 +2,13 @@
     
     use App\Models\Interaction;
     use App\Models\Category;
-
-    $post_id = $post->id;
-
+    if($post->post_id){
+        $post_id = $post->post_id;
+    }else{
+        $post_id = $post->id;
+    }
     $interaction = Interaction::where('ip', $IP)->where('post_id', $post_id)->first();
     $categories = Category::where('post_id', $post_id)->get();
-
 @endphp
 
 <div class="card m-3 shadow-sm" style="width: 320px;">
@@ -104,4 +105,3 @@
 
 
 </div>
-
