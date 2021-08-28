@@ -69,13 +69,7 @@
 
                 @foreach($bookmarks as $bookmark)
 
-                    @php
-
-                        $post = App\Models\Post::where('id', $bookmark->post_id)->first();
-
-                    @endphp
-
-                    @include('components/home/post_card')
+                    @include('components/home/bookmarked_post_card')
         
                 @endforeach
             
