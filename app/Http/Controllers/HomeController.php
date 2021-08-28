@@ -118,6 +118,7 @@ class HomeController extends Controller
 
         $bookmarks = Interaction::where('ip', $IP)->where('bookmark','yes')->paginate(6);
 
+        
         return view('layouts/home', compact('bookmarks','IP'));
 
     }

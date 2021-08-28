@@ -70,7 +70,7 @@
                 @foreach($bookmarks as $bookmark)
 
                     @php
-                    
+
                         $post = App\Models\Post::where('id', $bookmark->post_id)->first();
 
                     @endphp
