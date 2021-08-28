@@ -3,10 +3,10 @@
     use App\Models\Interaction;
     use App\Models\Category;
 
-    if($post->post_id){
-        $post_id = $post->post_id;
-    }else{
+    if(empty($post->post_id)){
         $post_id = $post->id;
+    }else{
+        $post_id = $post->post_id;
     }
 
     $interaction = Interaction::where('ip', $IP)->where('post_id', $post_id)->first();
