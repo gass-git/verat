@@ -41,11 +41,11 @@
     @include('components/navbar/dropdown_two')
   </div>
 
-  <div class="mt-4 mr-5">
+  {{-- <div class="mt-4 mr-5">
     <a href="{{ url('/show_bookmarks') }}" class="nav-item" style="color:white;">
       Bookmarked
     </a>
-  </div>
+  </div> --}}
 
   @auth 
     <div class="mt-4 mr-5">
