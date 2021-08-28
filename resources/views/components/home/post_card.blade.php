@@ -1,3 +1,4 @@
+@csrf
 @php
     
     use App\Models\Interaction;
