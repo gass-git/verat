@@ -41,7 +41,7 @@
         <span class="mr-1">© 2021</span>
 
         <a href="https://github.com/gass-git/verat" target="_blank">
-           Verat 0.3
+           Verat 0.5
         </a>
         
         <span class="ml-1 mr-1"> - Built by </span>
