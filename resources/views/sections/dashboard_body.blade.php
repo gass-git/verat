@@ -9,14 +9,21 @@
         text-align:center;
         border-right: 1px solid rgb(216, 216, 216);
     }
+    .dashboard-container .row{
+        margin:10px 3px 50px 3px;
+        border-radius:5px;
+    }
+    body{
+        background-color: #FAF1E6;
+    }
 </style>
     
-<body style="background-color: #FAF1E6;">
+<body>
     <div class="dashboard-container mx-auto">
     
         <h3 class="pb-1 ml-2">Summary</h3>
 
-        <div class="row p-3 border" style="margin:10px 3px 50px 3px;border-radius:5px;">
+        <div class="row p-3 border">
 
             <div class="col-sm-4">
                 <div class="pt-4" >12</div>
@@ -46,10 +53,12 @@
                 @foreach($logs as $log)
 
                     <a href="/post={{$log->post_id}}+scroll" class="list-group-item list-group-item-action">
+                        
                         <span style="text-transform:capitalize;"><b>{{ $log->from }}</b></span>
                         <span>{{ $log->event }}</span>
                         <span>on post {{ $log->post_id }}</span>
                         <span style="float:right">{{ $log->created_at }}</span>
+                    
                     </a>
                 
                 @endforeach

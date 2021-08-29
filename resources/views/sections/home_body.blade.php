@@ -43,11 +43,19 @@
     .page-link{
         color:#2e2e2e;
     }
+    body{
+        background-color: #FAF1E6;
+        min-width:443px;
+    }
+    #post-cards-wrapper{
+        max-width:1060px;
+        padding:0!important;
+    }
 </style>
 
-<body style="background-color: #FAF1E6;min-width:443px;">
-    <div style="padding:50px 0 50px 0;min-height:calc(99vh - 70px - 50px);">
-        <div id="post-cards-wrapper" class="mx-auto" style="max-width:1060px;padding:0!important;">
+<body>
+    <div style="padding:50px 0 50px 0; min-height:calc(99vh - 70px - 50px)">
+        <div id="post-cards-wrapper" class="mx-auto">
 
             <div class="d-flex flex-wrap">
         
@@ -70,8 +78,9 @@
                 @foreach($bookmarks as $bookmark)
 
                     @php
-                    
+        
                         $post = App\Models\Post::where('id', $bookmark->post_id)->first();
+
                     @endphp
 
                     @include('components/home/post_card')

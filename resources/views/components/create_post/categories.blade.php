@@ -75,6 +75,5 @@
             box.removeAttr( 'style' );
            
         }
-    })
-   
+    });
 </script>
