@@ -30,6 +30,7 @@
         font-size:20px;
         text-align:center;
         z-index:99;
+        cursor: pointer;
     }
     .check-btn:hover{
         background-color:rgba(255, 255, 255, 0.9);
@@ -103,7 +104,7 @@
 
 <script>
 
-    let grey = 'rgb(196, 196, 196)';
+    let grey = 'rgb(185, 185, 185)';
     let red = 'rgb(201, 82, 35)';
     let green = 'rgb(20, 128, 56)';
 

@@ -96,7 +96,7 @@
                 <i class="fas fa-bookmark"></i>
             </div>
         @else
-            <div id="{{ $post_id }}" class="bookmark-btn" style="color:rgb(196, 196, 196);">
+            <div id="{{ $post_id }}" class="bookmark-btn" style="color:rgb(185, 185, 185);">
                 <i class="fas fa-bookmark"></i>
             </div> 
         @endif
@@ -106,7 +106,7 @@
                 <i class="fas fa-check"></i>
             </div>
         @else
-            <div id="{{ $post_id }}" class="check-btn" style="color:rgb(196, 196, 196);">
+            <div id="{{ $post_id }}" class="check-btn" style="color:rgb(185, 185, 185);">
                 <i class="fas fa-check"></i>
             </div>
         @endif
@@ -114,11 +114,11 @@
     {{-- If object does not exist --}}
     @else
             
-        <div id="{{ $post_id }}" class="bookmark-btn" style="color:rgb(196, 196, 196);">
+        <div id="{{ $post_id }}" class="bookmark-btn" style="color:rgb(185, 185, 185);">
             <i class="fas fa-bookmark"></i>
         </div>    
 
-        <div id="{{ $post_id }}" class="check-btn" style="color:rgb(196, 196, 196);">
+        <div id="{{ $post_id }}" class="check-btn" style="color:rgb(185, 185, 185);">
             <i class="fas fa-check"></i>
         </div>
 
