@@ -16,7 +16,7 @@ class CreateInteractionsTable extends Migration
         Schema::create('interactions', function (Blueprint $table) {
             $table->id();
             $table->string('ip');
-            $table->integer('post_id');
+            $table->integer('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->string('bookmark')->nullable();
             $table->string('check')->nullable();
             $table->timestamps();

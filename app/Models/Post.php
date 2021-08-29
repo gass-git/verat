@@ -26,4 +26,10 @@ class Post extends Model
 
     }
 
+    public function interaction(){
+
+        return $this->hasMany('App\Interaction' , 'post_id');
+
+    }
+
 }

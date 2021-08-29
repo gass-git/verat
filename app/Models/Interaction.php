@@ -10,4 +10,11 @@ class Interaction extends Model
     use HasFactory;
 
     protected $table = 'interactions';
+
+    public function post(){
+
+        $this->belongsTo('App\Post', 'post_id');
+
+    }
+
 }
