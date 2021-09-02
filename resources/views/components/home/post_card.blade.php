@@ -48,11 +48,11 @@
 
         <div class="card-footer pt-2">
 
-            <small class="text-muted" style="color:#2e2e2e!important;font-size:12px; opacity:0.8;">
+            <small class="text-muted" style="color:#2e2e2e!important;font-size:12px; opacity:0.8;" title="">
                 @if($post->updated_at)
-                    ― Updated on {{ date('F d, Y', strtotime($post->updated_at)) }}
+                    {{ date('F d, Y', strtotime($post->updated_at)) }}
                 @else
-                    ― Written on {{ date('F d, Y', strtotime($post->created_at)) }}
+                    {{ date('F d, Y', strtotime($post->created_at)) }}
                 @endif
             </small>
 
