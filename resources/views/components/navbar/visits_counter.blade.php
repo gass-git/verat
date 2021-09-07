@@ -30,7 +30,7 @@
     if($lenght-1 < $pos){
       echo '<span class="number-container p-1">'.'0'.'</span>';
     }else{
-      echo '<span class="number-container p-1">'.$reversed_number[$pos].'</span>'; 
+      echo '<span class="number-container p-1">'.$reversed_string[$pos].'</span>'; 
     }
 
   }
