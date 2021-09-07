@@ -15,15 +15,24 @@
 
 @php
 
-  $num_lenght = strlen((string)$visits);
-  $digit = array();
+  /** @abstract
+   * 
+   * 1) Convert the integer to string.
+   * 2) Reverse the string.
+   * 3) Echo each character of the reversed string using the index approach.
+   * 
+   */
+  $lenght = strlen((string)$visits);
+  $reversed_string = strrev((string)$visits);
 
   for($pos = 6; $pos >= 0; $pos--){
-    if($num_lenght-1 < $pos){
+    
+    if($lenght-1 < $pos){
       echo '<span class="number-container p-1">'.'0'.'</span>';
     }else{
-      echo '<span class="number-container p-1">'.substr($visits, $pos, $pos+1).'</span>';
+      echo '<span class="number-container p-1">'.$reversed_number[$pos].'</span>'; 
     }
+
   }
   
 @endphp
