@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css?v=2">
 
     <!-- Media -->
-    <link rel="stylesheet" href="css/media.css?v=8">
+    <link rel="stylesheet" href="css/media.css?v=9">
 
     <!-- App main style -->
     <link rel="stylesheet" href="css/custom_style.css?v=6">

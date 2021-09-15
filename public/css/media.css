@@ -1,10 +1,21 @@
 @media screen and (max-width: 1061px) {
-    #post-cards-wrapper{max-width: 708px!important}
+    #post-cards-wrapper {
+        max-width: 708px !important;
+    }
+    .home {
+        display: none !important;
+    }
 }
 @media screen and (max-width: 800px) {
-    #visit-counter{display:none!important}
+    #visit-counter {
+        display: none !important;
+    }
 }
 @media screen and (max-width: 800px) {
-    #post-cards-wrapper{max-width: 350px!important}
-    #praise-btns{display:none!important}
+    #post-cards-wrapper {
+        max-width: 350px !important;
+    }
+    #praise-btns {
+        display: none !important;
+    }
 }
