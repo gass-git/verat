@@ -37,6 +37,16 @@
     transform-origin: top left;
     animation-delay: 3s;
 }
+.home{
+    color:white;
+    font-size:15px;
+    margin:10px 0;
+    font-weight: 600;
+    opacity:0.5;
+}
+.home:hover{
+    color:#cccccc!important;
+  }
 @keyframes scale{
     50%{
         transform: scale(1.1);
@@ -53,10 +63,10 @@
         <span></span>
     </div>
     
-    {{--
-    <div class="ml-4">
-        {{ config('app.name') }} 
-    </div>    
-    --}}
+    @if (empty($home))
+        <div class="home ml-4">
+            Go back <i class="fas fa-hiking ml-1" style="font-size:20px"></i>
+        </div>    
+    @endif
 
 </div>
