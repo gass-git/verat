@@ -80,6 +80,10 @@
                         <i class="fab fa-php ml-1"></i>
                     @endif
 
+                    @if($data->category === 'inspiration')
+                        <i class="far fa-lightbulb"></i>
+                    @endif
+
                 @endforeach
 
             </div>

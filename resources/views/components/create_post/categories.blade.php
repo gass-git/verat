@@ -59,6 +59,15 @@
 
 </div>
 
+<div class="form-check form-check-inline">
+    
+    <label id="inspiration-box" class="form-check-label category-box">
+        <input class="form-check-input" type="checkbox" name="inspiration" value="inspiration" style="display:none">
+        <i class="far fa-lightbulb"></i>
+    </label>
+
+</div>
+
 <script>
     $('.form-check-input').on('click', function(){
         
