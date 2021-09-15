@@ -10,6 +10,7 @@
     <a class="dropdown-item" href="{{ url('/home_topic=php') }}">PHP</a>
     <a class="dropdown-item" href="{{ url('/home_topic=html') }}">HTML</a>
     <a class="dropdown-item" href="{{ url('/home_topic=css') }}">CSS</a>
+    <a class="dropdown-item" href="{{ url('/home_topic=inspiration') }}">Inspiration</a>
   </div>
 
 </div>
