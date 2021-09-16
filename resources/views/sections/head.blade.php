@@ -21,12 +21,12 @@
 
     <!-- Bootstrap CDN -->
     <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css?v=2">
+    <link rel="stylesheet" href="css/bootstrap.min.css?v=3">
 
     <!-- Media -->
-    <link rel="stylesheet" href="css/media.css?v=9">
+    <link rel="stylesheet" href="css/media.css?v=10">
 
     <!-- App main style -->
-    <link rel="stylesheet" href="css/custom_style.css?v=6">
+    <link rel="stylesheet" href="css/custom_style.css?v=7">
 
 </head>

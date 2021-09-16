@@ -61,27 +61,27 @@
                 @foreach($categories as $data)
 
                     @if($data->category === 'laravel')
-                        <i class="fab fa-laravel ml-1"></i>
+                        <i class="fab fa-laravel ml-1" title="Laravel"></i>
                     @endif
                 
                     @if($data->category === 'html')
-                        <i class="fab fa-html5 ml-1"></i>
+                        <i class="fab fa-html5 ml-1" title="HTML"></i>
                     @endif
 
                     @if($data->category === 'javascript')
-                        <i class="fab fa-js ml-1"></i>
+                        <i class="fab fa-js ml-1" title="JavaScript"></i>
                     @endif
 
                     @if($data->category === 'css')
-                        <i class="fab fa-css3-alt ml-1"></i>
+                        <i class="fab fa-css3-alt ml-1" title="CSS"></i>
                     @endif
 
                     @if($data->category === 'php')
-                        <i class="fab fa-php ml-1"></i>
+                        <i class="fab fa-php ml-1" title="PHP"></i>
                     @endif
 
                     @if($data->category === 'inspiration')
-                        <i class="far fa-lightbulb"></i>
+                        <i class="far fa-lightbulb" title="Inspiration"></i>
                     @endif
 
                 @endforeach

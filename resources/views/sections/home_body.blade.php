@@ -1,6 +1,10 @@
 <style>
     .card{
         border-radius: 0;
+        -webkit-transition: all 400ms linear;
+        -moz-transition: all 400ms linear;
+        -o-transition: all 400ms linear;
+        transition: all 400ms linear;
     }
     .card-img-top{
         border-radius: 0;
