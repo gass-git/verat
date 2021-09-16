@@ -154,6 +154,8 @@ $('.check-btn').on('click',function(){
         btn.css('color', grey);
         btn.attr('data-original-title', 'Did you read this?');
     }
+    
+    btn.tooltip('hide');
 
     $.ajax({
 
