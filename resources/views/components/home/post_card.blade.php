@@ -96,11 +96,11 @@
     @if($interaction)
 
         @if($interaction->bookmark === 'yes')
-            <div id="{{ $post->id }}" class="bookmark-btn" style="color:rgb(201, 82, 35);" data-toggle="tooltip" data-placement="right" title="Remove bookmark">
+            <div id="{{ $post->id }}" class="bookmark-btn" style="color:rgb(201, 82, 35);" title="Bookmarked">
                 <i class="fas fa-bookmark"></i>
             </div>
         @else
-            <div id="{{ $post_id }}" class="bookmark-btn" style="color:rgb(185, 185, 185);" data-toggle="tooltip" data-placement="right" title="Bookmark">
+            <div id="{{ $post_id }}" class="bookmark-btn" style="color:rgb(185, 185, 185);" title="Bookmark">
                 <i class="fas fa-bookmark"></i>
             </div> 
         @endif
@@ -118,7 +118,7 @@
     {{-- If object does not exist --}}
     @else
             
-        <div id="{{ $post_id }}" class="bookmark-btn" style="color:rgb(185, 185, 185);" data-toggle="tooltip" data-placement="right" title="Bookmark">
+        <div id="{{ $post_id }}" class="bookmark-btn" style="color:rgb(185, 185, 185);" title="Bookmark">
             <i class="fas fa-bookmark"></i>
         </div>    
 

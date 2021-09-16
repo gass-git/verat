@@ -119,10 +119,10 @@ $('.bookmark-btn').on('click',function(){
 
     if(btn.css('color') === grey){
         btn.css('color', red);
-        btn.attr('data-original-title', 'Remove bookmark');
+        btn.attr('title', 'Bookmarked');
     }else{
         btn.css('color', grey);
-        btn.attr('data-original-title', 'Bookmark');
+        btn.attr('title', 'Bookmark');
     }
 
     $.ajax({
