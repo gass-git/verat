@@ -75,9 +75,15 @@
 
 <script>
     window.onload = function() {
+        
         if (screen.width < 443) {
             var mvp = document.getElementById('vp');
             mvp.setAttribute('content','user-scalable=no,width=450');
         }
+
+        $('[data-toggle="tooltip"]').tooltip();
+
     }
+
+
     </script>

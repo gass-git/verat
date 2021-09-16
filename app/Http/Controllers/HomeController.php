@@ -61,7 +61,7 @@ class HomeController extends Controller
             $posts = Post::orderBy('views', 'DESC')->paginate(6);
         }
 
-        if ($field == 'popularity') {
+        if ($field == 'likes') {
             $posts = Post::orderBy('likes', 'DESC')->paginate(6);
         }
 

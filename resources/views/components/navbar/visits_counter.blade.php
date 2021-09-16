@@ -13,6 +13,8 @@
 }
 </style>
 
+<div title="Unique visitors">
+
 @php
 
   /** @abstract
@@ -36,3 +38,4 @@
   }
   
 @endphp
+</div>

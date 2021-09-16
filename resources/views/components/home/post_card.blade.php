@@ -96,21 +96,21 @@
     @if($interaction)
 
         @if($interaction->bookmark === 'yes')
-            <div id="{{ $post->id }}" class="bookmark-btn" style="color:rgb(201, 82, 35);">
+            <div id="{{ $post->id }}" class="bookmark-btn" style="color:rgb(201, 82, 35);" data-toggle="tooltip" data-placement="top" title="Remove bookmark">
                 <i class="fas fa-bookmark"></i>
             </div>
         @else
-            <div id="{{ $post_id }}" class="bookmark-btn" style="color:rgb(185, 185, 185);">
+            <div id="{{ $post_id }}" class="bookmark-btn" style="color:rgb(185, 185, 185);" data-toggle="tooltip" data-placement="top" title="Bookmark">
                 <i class="fas fa-bookmark"></i>
             </div> 
         @endif
 
         @if($interaction->check === 'yes')
-            <div id="{{ $post_id }}" class="check-btn" style="color:rgb(20, 128, 56);">
+            <div id="{{ $post_id }}" class="check-btn" style="color:rgb(20, 128, 56);" data-toggle="tooltip" data-placement="top" title="Post read">
                 <i class="fas fa-check"></i>
             </div>
         @else
-            <div id="{{ $post_id }}" class="check-btn" style="color:rgb(185, 185, 185);">
+            <div id="{{ $post_id }}" class="check-btn" style="color:rgb(185, 185, 185);" data-toggle="tooltip" data-placement="top" title="Did you read this?">
                 <i class="fas fa-check"></i>
             </div>
         @endif
@@ -118,11 +118,11 @@
     {{-- If object does not exist --}}
     @else
             
-        <div id="{{ $post_id }}" class="bookmark-btn" style="color:rgb(185, 185, 185);">
+        <div id="{{ $post_id }}" class="bookmark-btn" style="color:rgb(185, 185, 185);" data-toggle="tooltip" data-placement="top" title="Bookmark">
             <i class="fas fa-bookmark"></i>
         </div>    
 
-        <div id="{{ $post_id }}" class="check-btn" style="color:rgb(185, 185, 185);">
+        <div id="{{ $post_id }}" class="check-btn" style="color:rgb(185, 185, 185);" data-toggle="tooltip" data-placement="top" title="Did you read this?">
             <i class="fas fa-check"></i>
         </div>
 

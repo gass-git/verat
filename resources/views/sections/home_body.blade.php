@@ -115,8 +115,10 @@ $('.bookmark-btn').on('click',function(){
 
     if(btn.css('color') === grey){
         btn.css('color', red);
+        btn.attr('data-original-title', 'Remove bookmark');
     }else{
         btn.css('color', grey);
+        btn.attr('data-original-title', 'Bookmark');
     }
 
     $.ajax({
@@ -143,8 +145,10 @@ $('.check-btn').on('click',function(){
 
     if(btn.css('color') === grey){
         btn.css('color', green);
+        btn.attr('data-original-title', 'Post read');
     }else{
         btn.css('color', grey);
+        btn.attr('data-original-title', 'Did you read this?');
     }
 
     $.ajax({
