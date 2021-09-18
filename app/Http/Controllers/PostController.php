@@ -159,12 +159,12 @@ class PostController extends Controller
         $post = Post::where('id', $req->post_id)->first();
         $like_exists = PraiseRecord::where('ip', $user_ip)->where('post_id', $post->id)->first();
 
-
         if ($like_exists) {
 
             PraiseRecord::where('ip', $user_ip)->where('post_id', $post->id)->first()->delete();
 
             $post->likes -= 1;
+            $post->timestamps = false;
             $post->save();
         } else {
 
@@ -174,6 +174,7 @@ class PostController extends Controller
             ]);
 
             $post->likes += 1;
+            $post->timestamps = false;
             $post->save();
         }
     }
