@@ -19,8 +19,11 @@ h5{
     margin:30px 0 20px 0;
 }
 #post-wrapper a{
-    font-weight: bold;
+    font-weight: 500;
     color:#2e71ff!important;
+}
+#post-wrapper a:hover{
+    color:#6a99fd!important;
 }
 
 </style>
