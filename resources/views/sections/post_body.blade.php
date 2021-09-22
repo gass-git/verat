@@ -18,6 +18,10 @@ h1{
 h5{
     margin:30px 0 20px 0;
 }
+#post-wrapper a{
+    font-weight: bold;
+    color:#2e71ff!important;
+}
 
 </style>
 
