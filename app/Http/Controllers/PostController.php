@@ -163,8 +163,8 @@ class PostController extends Controller
 
             PraiseRecord::where('ip', $user_ip)->where('post_id', $post->id)->first()->delete();
 
-            $post->likes -= 1;
             $post->timestamps = false;
+            $post->likes -= 1;
             $post->save();
         } else {
 
@@ -173,8 +173,8 @@ class PostController extends Controller
                 'post_id' => $req->post_id
             ]);
 
-            $post->likes += 1;
             $post->timestamps = false;
+            $post->likes += 1;
             $post->save();
         }
     }
