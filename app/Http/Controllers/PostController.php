@@ -98,7 +98,8 @@ class PostController extends Controller
             'likes' => 0,
             'views' => 0,
             'comments' => 0,
-            'created_at' => Carbon::now()
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
 
         $post_id = Post::max('id');

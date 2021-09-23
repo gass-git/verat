@@ -40,7 +40,7 @@ class HomeController extends Controller
             ]);
         }
 
-        $posts = Post::whereNotNull('body')->orderBy('id', 'DESC')->paginate(6);
+        $posts = Post::whereNotNull('body')->orderBy('updated_at', 'DESC')->paginate(6);
         $field = 'Latest';
 
         $home = true;
@@ -54,7 +54,7 @@ class HomeController extends Controller
         $IP = request()->ip();
 
         if ($field == 'latest') {
-            $posts = Post::orderBy('created_at', 'DESC')->paginate(6);
+            $posts = Post::orderBy('updated_at', 'DESC')->paginate(6);
         }
 
         if ($field == 'views') {

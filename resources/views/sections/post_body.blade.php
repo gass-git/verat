@@ -39,11 +39,23 @@ h5{
             </h1>
             <div style="margin-top:-10px">
                 
-                @if($post->updated_at)
-                   Updated on {{ date('F d, Y', strtotime($post->updated_at)) }}
+                {{-- Since the posts are normally edited a number of times when they are being written,
+                    the updated_at field gets updated many times and so if there is not a special
+                    conditional statement all the posts will show as updated. This is the 
+                    reason behind this conditional statement, which shows the post as updated only
+                    if the days aparts between the updated date and created date are more than 7 days --}}
+                @php
+                    $days_apart = round(strtotime($post->updated_at) - strtotime($post->created_at))/86400;    
+                @endphp
+
+                @if( $days_apart > 7 )
+                   Updated on 
                 @else
-                   Written on {{ date('F d, Y', strtotime($post->created_at)) }}
+                   Written on 
                 @endif
+
+                {{ date('F d, Y', strtotime($post->updated_at)) }}
+
             </div>
         </div>
 
