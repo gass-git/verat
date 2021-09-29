@@ -30,6 +30,7 @@ class PostController extends Controller
 
         if (!$visit_exists) {
 
+            $post->timestamps = false;
             $post->views += 1;
             $post->save();
 
