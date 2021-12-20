@@ -26,17 +26,17 @@
         <div class="row p-3 border">
 
             <div class="col-sm-4">
-                <div class="pt-4" >12</div>
+                <div class="pt-4" >{{ $total_posts }}</div>
                 <div class="pt-2" >Posts</div>
             </div>
 
             <div class="col-sm-4">
-                <div class="pt-4" >12</div>
+                <div class="pt-4" >{{ $total_likes }}</div>
                 <div class="pt-2" >Likes</div>
             </div>
 
             <div class="col-sm-4" style="border-right: none">
-                <div class="pt-4" >12</div>
+                <div class="pt-4" >{{ $total_comments }}</div>
                 <div class="pt-2" >Comments</div>
             </div>
 
